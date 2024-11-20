@@ -35,11 +35,14 @@
 	
 		<!-- JavaScript -->
 		<script>
+			console.log('Inside script section.');
+			
 			// app.js
 			// const myObject = require('../JS/Persons.js');
 			import { myObject } from '../JS/source.js';
 			
 			document.getElementById("containerForPersons").innerHTML = myObject.name; // Output: John Doe
+			console.log(myObject.name); // Output: John Doe
 		</script>
 	</body>
 </html>
