@@ -21,7 +21,9 @@
 		</div>
 
     <Main>
-      
+			<Div id="containerForPersons">
+				
+			</Div>
     </Main>
     
 		<!-- Yderligere CSS styling -->
@@ -37,6 +39,7 @@
 			// app.js
 const myObject = require('../JS/Persons.js');
 
+			document.getElementById('containerForPersons').innerHTML = myObject.name
 console.log(myObject.name); // Output: John Doe
 		</script>
 	
