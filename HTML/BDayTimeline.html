@@ -19,7 +19,7 @@
 		</div>
 
 		<div id="containerForPersons">
-			
+			<p>Script not loaded</p>
 		</div>
 
     
@@ -33,12 +33,10 @@
 	
 		<!-- JavaScript -->
 		<script>
-			// Create an Object:
-			const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+			// app.js
+			const myObject = require('../JS/Persons.js');
 			
-			// Display Data from the Object:
-			document.getElementById("containerForPersons").innerHTML =
-			person.firstName + " is " + person.age + " years old.";
+			document.getElementById("containerForPersons").innerHTML = myObject.name; // Output: John Doe
 		</script>
 	</body>
 </html>
