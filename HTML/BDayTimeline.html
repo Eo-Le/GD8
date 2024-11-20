@@ -34,13 +34,12 @@
 	
 		<!-- JavaScript -->
 		<script>
-			// app.js
-const myObject = require('../JS/Persons.js');
-
-			document.getElementById('containerForPersons').innerHTML = "test";
-console.log(myObject.name); // Output: John Doe
-
-			document.getElementById("demo").innerHTML = "test_demo"
+			// Create an Object:
+			const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+			
+			// Display Data from the Object:
+			document.getElementById("demo").innerHTML =
+			person.firstName + " is " + person.age + " years old.";
 		</script>
 	
 	</body>
