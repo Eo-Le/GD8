@@ -2,6 +2,6 @@
 Her samles nyttige informationer om GiaDinh8
 
 ## Links
-Jekyll themes:[1^]
+Jekyll themes:[^1]
 
-1^: [Jekyll themes](https://pages.github.com/themes/)
+^1: [Jekyll themes](https://pages.github.com/themes/)
