@@ -3,21 +3,13 @@ layout: default
 title: Fødselsdag
 ---
 
-<p>Out side container.D</p>
-<img src="./assets/img/test.gif" alt="test billede">
-<div id="containerForPersons">
-	<img src="" id="img"></img>
-	<p>Script not loaded inside container.</p>
-</div>
-
-<div id="image-container"></div>
+<div id="image-container" class="circular"></div>
 
 <button onclick="sayHello()">klik mig</button>
 
-<!-- Yderligere CSS styling -->
+<!-- Yderligere side-specifik CSS styling -->
 <style>
 </style>
-
 
 
 <!-- JavaScript -->
@@ -32,9 +24,6 @@ title: Fødselsdag
 		persons_db += `${person.name}, `
 	};
 
-	//const container = document.getElementById("containerForPersons");
-	//container.innerHTML = `Personerne i databasen: ${persons_db}`;
-	
 	// Target the container where images will be displayed
 	const imageContainer = document.getElementById("image-container");
 
@@ -44,7 +33,9 @@ title: Fødselsdag
 		const imgElement = document.createElement("img");
 		imgElement.src = person.img;  // Set the src attribute to the img property
 		imgElement.alt = person.name; // Set the alt attribute to the person's name
-		imgElement.style.margin = "10px"; // Add some styling (optional)
+		
+		// Add the CSS class for styling, from assets/css/styles.css
+		imgElement.classList.add("image-circular");
 
 		// Append the img element to the container
 		imageContainer.appendChild(imgElement);
