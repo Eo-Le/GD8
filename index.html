@@ -7,6 +7,17 @@ title: Fødselsdag
 
 <button onclick="sayHello()">klik mig</button>
 
+<h1>People Data</h1>
+<div class="container d-flex image-row" id="image-container" >
+{% assign sorted_people = site.data.people | sort: "age" %}
+{% for person in sorted_people %}
+	<div>
+	    <img src="{{ person.img }}" alt="{{ person.name }}">
+	    <p>{{ person.name }}, Age: {{ person.age }}</p>
+	</div>
+{% endfor %}
+</div>
+
 <!-- Yderligere side-specifik CSS styling -->
 <style>
 </style>
