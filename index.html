@@ -3,20 +3,23 @@ layout: default
 title: Fødselsdag
 ---
 
-<div id="image-container" class="circular"></div>
-
 <button onclick="sayHello()">klik mig</button>
 
-<h1>People Data</h1>
-<div class="container d-flex image-row" id="image-container" >
-{% assign sorted_people = site.data.people | sort: "age" %}
-{% for person in sorted_people %}
-	<div>
-	    <img src="{{ person.img }}" alt="{{ person.name }}">
-	    <p>{{ person.name }}, Age: {{ person.age }}</p>
-	</div>
-{% endfor %}
+<h1>GD8 - Fødselsdagsoversigt</h1>
+<h2><u>Hvem har fødselsdag i dag?</u></h2>
+<h2><u>Hvem har fødselsdag næste gang?</u></h2>
+<h2><u>Aktuelle måned</u></h2>
+<h2><u>JANUAR</u></h2>
+<div class="container-fluid overflow-auto d-flex text-center image-row"" style="height: 250px">
+	{% assign sorted_people = site.data.people | sort: "age" %}
+	{% for person in sorted_people %}
+		<div class="px-1">
+			<img class="rounded-circle" src="{{ person.img }}" alt="{{ person.name }}">
+			<p>{{ person.name }}, Age: {{ person.age }}</p>
+		</div>
+	{% endfor %}
 </div>
+<h2><u>FEBRUAR</u></h2>
 
 <!-- Yderligere side-specifik CSS styling -->
 <style>
@@ -26,29 +29,4 @@ title: Fødselsdag
 <!-- JavaScript -->
 <script type="module">
 	console.log('Inside script section.');
-	
-	const persons = importPersons();
-	let persons_db = "";
-	console.log(persons_db);
-
-	for (let person of persons) {
-		persons_db += `${person.name}, `
-	};
-
-	// Target the container where images will be displayed
-	const imageContainer = document.getElementById("image-container");
-
-	// Loop through the array of persons
-	for (let person of persons) {
-		 // Create an img element
-		const imgElement = document.createElement("img");
-		imgElement.src = person.img;  // Set the src attribute to the img property
-		imgElement.alt = person.name; // Set the alt attribute to the person's name
-		
-		// Add the CSS class for styling, from assets/css/styles.css
-		imgElement.classList.add("image-circular");
-
-		// Append the img element to the container
-		imageContainer.appendChild(imgElement);
-	}
 </script>

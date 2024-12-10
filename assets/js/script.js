@@ -1,3 +1,3 @@
 function sayHello() {
-    alert('Hej fra assets/js/script.js');
+    alert('Hej. Hjemmesiden er under udvikling.');
 }
