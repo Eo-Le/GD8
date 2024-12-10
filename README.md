@@ -2,7 +2,7 @@
 Her samles nyttige informationer om GiaDinh8  
 
 # Links, Klik for at åbne
-[Fødselsdag](https://htmlpreview.github.io/?https://raw.githubusercontent.com/Eo-Le/GD8/refs/heads/html_birthday_reminder/HTML/BDayTimeline.html)
+[Hjemmesiden](https://eo-le.github.io/GD8/)
 
 # Guide
 ```bash
