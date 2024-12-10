@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="da">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Fødselsdag</title>
+
+		<!-- Bootstrap 5.3.3  CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		
+	</head>
+	
+	<body>
+		<div class="container">
+			<header class="p-3 text-center">
+				<h1>Layout: default.html</h1> <h6>Under udvikling. Senest revideret 10.12.2024</h6>
+				<hr></hr>
+				<h1>Fødselsdag</h1>
+			</header>
+		</div>
+
+		<p>Out side container.D</p>
+<img src="./assets/img/test.gif" alt="test billede">
+<div id="containerForPersons">
+	<img src="" id="img"></img>
+	<p>Script not loaded inside container.</p>
+</div>
+
+<div id="image-container"></div>
+
+<button onclick="sayHello()">klik mig</button>
+
+<!-- Yderligere CSS styling -->
+<style>
+</style>
+
+
+
+<!-- JavaScript -->
+<script type="module">
+	console.log('Inside script section.');
+	
+	const persons = importPersons();
+	let persons_db = "";
+	console.log(persons_db);
+
+	for (let person of persons) {
+		persons_db += `${person.name}, `
+	};
+
+	//const container = document.getElementById("containerForPersons");
+	//container.innerHTML = `Personerne i databasen: ${persons_db}`;
+	
+	// Target the container where images will be displayed
+	const imageContainer = document.getElementById("image-container");
+
+	// Loop through the array of persons
+	for (let person of persons) {
+		 // Create an img element
+		const imgElement = document.createElement("img");
+		imgElement.src = person.img;  // Set the src attribute to the img property
+		imgElement.alt = person.name; // Set the alt attribute to the person's name
+		imgElement.style.margin = "10px"; // Add some styling (optional)
+
+		// Append the img element to the container
+		imageContainer.appendChild(imgElement);
+	}
+</script>
+
+
+		<!-- Bootstrap 5.3.3 Script -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+		<!-- Local scripts -->
+		<script src="/assets/js/script.js"></script>
+		<script src="/assets/js/persons.js"></script>
+	</body>
+</html>
