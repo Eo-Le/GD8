@@ -12,6 +12,11 @@ http-server -p 8000 # view the website at local port 8000. Need to add port 8000
 
 jekyll serve # view the website using jekyll in order to process front matters, _layouts and so on
 gh codespace stop # choose from the list which codespace to shutdown in stead of do it from github.com
+
+gem install bundler # kør kommandoen efter Gemfile er oprettet
+bundle install # kørt derefter denne kommando
+bundle exec jekyll serve # og derefter denne kommando
+
 ```  
   
 ## NOTES
@@ -20,7 +25,9 @@ gh codespace stop # choose from the list which codespace to shutdown in stead of
   Ensure that the values are not exposed. 
   Don't commit the files where the secrets have been replaced.
   Use git .ignores on relevant files.
-
+* sass @import is deprecated
+  npm install -g sass-migrator
+  sass-migrator module --migrate-deps './assets/css/'
 
 ### Fodnote
 [^1]
