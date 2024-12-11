@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Fødselsdag
 ---
 
@@ -17,6 +16,12 @@ title: Fødselsdag
 			<img class="rounded-circle" src="{{ person.img }}" alt="{{ person.name }}">
 			<p>{{ person.name }}, Age: {{ person.age }}</p>
 		</div>
+	{% endfor %}
+</div>
+<h2>LOOPING THROUGH SECRETS</h2>
+<div>
+	{% for secret in site.data.secrets %}
+		<h1>Hej {{ secret.name }} </h1>
 	{% endfor %}
 </div>
 <h2><u>FEBRUAR</u></h2>

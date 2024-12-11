@@ -1,1 +1,10 @@
-baseurl = ""
+url: "https://eo-le.github.io/GD8/"
+baseurl: ""
+
+# if path in root then in front matter use layout: default. 
+# No need to define layout in root directory
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

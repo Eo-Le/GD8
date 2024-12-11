@@ -2,7 +2,7 @@
 Her samles nyttige informationer om GiaDinh8  
 
 # Links, Klik for at åbne
-[Fødselsdag](https://htmlpreview.github.io/?https://raw.githubusercontent.com/Eo-Le/GD8/refs/heads/html_birthday_reminder/HTML/BDayTimeline.html)
+[Hjemmesiden](https://eo-le.github.io/GD8/)
 
 # Guide
 ```bash
@@ -12,7 +12,15 @@ http-server -p 8000 # view the website at local port 8000. Need to add port 8000
 
 jekyll serve # view the website using jekyll in order to process front matters, _layouts and so on
 gh codespace stop # choose from the list which codespace to shutdown in stead of do it from github.com
-```
+```  
+  
+## NOTES
+* gh secrets can't be used directly in code. 
+  Instead run a script during deployment to replaced the secrets with the actual values. 
+  Ensure that the values are not exposed. 
+  Don't commit the files where the secrets have been replaced.
+  Use git .ignores on relevant files.
+
 
 ### Fodnote
 [^1]
