@@ -1,0 +1,48 @@
+<p>Testing javascript
+Welcome to My Home Page.</p>
+
+<ul>
+  <li>Original date - 2020-04-13T10:20:00Z</li>
+  <li>With timeago filter - 4 years and 8 months ago</li>
+</ul>
+
+<h1 id="simple-javascript-button-alert">Simple JavaScript Button Alert</h1>
+
+<p>This is an example of a simple JavaScript button that triggers an alert message. When using Jekyll to render this <code class="language-plaintext highlighter-rouge">README.md</code>, you can include HTML and JavaScript within the Markdown.</p>
+
+<h2 id="example-button">Example Button</h2>
+
+<p>Below is the code for a button with an alert message:</p>
+
+<html>
+<head>
+    <title>Button Alert Example</title>
+</head>
+<body>
+    <button onclick="alert('Hello! This is a simple alert message.')">Click Me!</button>
+</body>
+</html>
+
+<h2 id="how-to-use">How to Use</h2>
+
+<ol>
+  <li>Copy and paste the above HTML code into your Jekyll project, or directly into a Markdown file where HTML is supported.</li>
+  <li>Make sure the Markdown file is processed by Jekyll (e.g., add it to your <code class="language-plaintext highlighter-rouge">_posts</code> or other appropriate directory).</li>
+  <li>When rendered in a browser, the button will display, and clicking it will trigger the alert message.</li>
+</ol>
+
+<h3 id="preview">Preview</h3>
+<p>When rendered, you will see a button like this:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"alert('Hello! This is a simple alert message.')"</span><span class="nt">&gt;</span>Click Me!<span class="nt">&lt;/button&gt;</span>
+</code></pre></div></div>
+
+<p>Clicking the button displays the alert message.</p>
+
+<h2 id="note">Note</h2>
+<p>Ensure you have enabled HTML rendering in your Jekyll configuration if necessary. For example, add the following in <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">markdown</span><span class="pi">:</span> <span class="s">kramdown</span>
+<span class="na">kramdown</span><span class="pi">:</span>
+  <span class="na">input</span><span class="pi">:</span> <span class="s">GFM</span>
+</code></pre></div></div>
