@@ -47,6 +47,14 @@ Her samles nyttige informationer om GiaDinh8
   ```bash
   bundle exec jekyll serve
   ```
+
+## Test javascript  
+* Inline, works
+  ```html
+  <button onclick="alert('Hello! This is a simple alert message.')">Click Me!</button>
+  ```
+
+  
 [^1]: [Jekyll Requirement](https://jekyllrb.com/docs/installation/#requirements)  
 [^2]: [Jekyll Quick Start](https://jekyllrb.com/docs/)  
 [^3]: [Github Actions in codespace](https://jekyllrb.com/docs/continuous-integration/github-actions/)
