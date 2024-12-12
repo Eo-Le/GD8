@@ -62,7 +62,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
       - name: Retrieve secret
         env:
-          super_secret: ${{ secrets.MYNAME }}
+          super_secret: ${{ MYNAME }}
         run: |
           example-command "$super_secret"
 
