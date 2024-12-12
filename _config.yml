@@ -2,6 +2,5 @@
 
 title: "Jekyll Actions Demo"
 
-#markdown: kramdown
-#kramdown:
-#  input: GFM
+url: "https://eo-le.github.io/GD8/"
+baseurl: ""
