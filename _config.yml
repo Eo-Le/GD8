@@ -1,6 +1,16 @@
-# _config.yml
+last_commit: "{{ site.time | date: '%Y-%m-%d' }}"
 
 title: "Jekyll Actions Demo"
 
 url: "https://eo-le.github.io/GD8/"
 baseurl: ""
+
+# layouts applied to different type of paths. If type is omitted then root directory is applied
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+
+
