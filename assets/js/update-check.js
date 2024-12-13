@@ -6,9 +6,9 @@ const previousUpdate = localStorage.getItem('lastUpdate');
 
 // Compare timestamps to detect updates
 if (previousUpdate && previousUpdate !== currentUpdate) {
-    alert(`The website has been updated! Please refresh.\npreviousUpdate: ${previousUpdate}\ncurrentUpdate: ${currentUpdate}`);
+    alert(`Hjemmesiden er opdateret.\nGamle opdatering: ${previousUpdate}\nNy opdatering: ${currentUpdate}`);
 } else {
-    alert(`No updates.\npreviousUpdate: ${previousUpdate}\ncurrentUpdate: ${currentUpdate}`);
+    // alert(`No updates.\npreviousUpdate: ${previousUpdate}\ncurrentUpdate: ${currentUpdate}`);
 }
 
 // Store the latest timestamp in localStorage
