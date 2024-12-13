@@ -64,6 +64,17 @@ Her samles nyttige informationer om GiaDinh8
   bundle exec jekyll serve --trace --verbose
   ```
 
+  ## When switching to new branch
+  * have to run
+    ```bash
+    bundle install
+    bundle exec jekyll serve
+    ```
+  * change pages
+    * change the branch to be deployed
+    * save
+    * change back to deployed by Github Actions
+
 
 [^1]: [Jekyll Requirement](https://jekyllrb.com/docs/installation/#requirements)  
 [^2]: [Jekyll Quick Start](https://jekyllrb.com/docs/)  
