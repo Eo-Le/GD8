@@ -49,7 +49,7 @@ jobs:
           JEKYLL_ENV: production
       - name: Add cache-busting query strings
         run: |
-          find _site -name '*.html' -exec sed -i \
+          find _site -name '*.html' -exec sed -i'' \
           -e "s|href=\"{{ \([^|]*\) | relative_url }}\"|href=\"{{ \1 | relative_url }}?v=${{ github.run_number }}\"|g" \
           -e "s|src=\"{{ \([^|]*\) | relative_url }}\"|src=\"{{ \1 | relative_url }}?v=${{ github.run_number }}\"|g" \
           {} +
