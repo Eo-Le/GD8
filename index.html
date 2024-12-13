@@ -1,19 +1,16 @@
 ---
-title: GD8 test4
+title: GD8 test5
+date: {{ date.now }}
 ---
 <h1>{{ page.title }}</h1>
 <hr></hr>
-<a href="{{ '/' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">Check for content update</a>
-
 {% assign date = '2020-04-13T10:20:00Z' %}
 <p>- Original date - {{ date }}</p>
 <p>- With timeago filter - {{ date | timeago }}</p>
+<hr></hr>
 
-
-<h1>Simple JavaScript Button Alert</h1>
-
-<button onclick="" class="btn btn-primary">Klik mig assets</button>
+<button onclick="" class="btn btn-primary">Klik mig assets/js/sript.js</button>
 <br>
-<button class="btn btn-secondary" onclick="alert('Hello! This is a simple alert message from inline.')">Click Me inline!</button>
-
+<button class="btn btn-secondary" onclick="alert('Hello! This is a simple alert message from inline.')">Klik mig inline!</button>
+<br>
 <div class="btn btn-danger" onclick="alert('Inline js + bootstrap')"">Ren bootstrap knap</div>
