@@ -7,7 +7,7 @@
     
     .image-row img {
     width: 30vw; /* Each image takes one-third of the viewport */
-    height: 60%; /* Maintain aspect ratio */
+    height: 40%; /* Maintain aspect ratio */
     scroll-snap-align: center;  /* Snap alignment for scrolling */
     }
     
