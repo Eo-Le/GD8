@@ -59,7 +59,7 @@ Her samles nyttige informationer om GiaDinh8
   ```
 
 ## Debugging error
-* error can't find favicon.ico. Not solved.
+* error can't find favicon.ico. Not solved. Somehow error disappeared.
   ```bash
   bundle exec jekyll serve --trace --verbose
   ```
