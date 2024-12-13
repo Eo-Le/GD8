@@ -47,16 +47,6 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-      - name: Add cache-busting query strings
-        run: |
-          find _site -name '*.html' -exec sed -i'' \ 
-          -e "s|href=\"{{ \([^|]*\) | relative_url }}\"|href=\"{{ \1 | relative_url }}?v=${{ github.run_number }}\"|g" \ 
-          -e "s|src=\"{{ \([^|]*\) | relative_url }}\"|src=\"{{ \1 | relative_url }}?v=${{ github.run_number }}\"|g" \ 
-          {} + || \ 
-          find _site -name '*.html' -exec sed -i \ 
-          -e "s|href=\"{{ \([^|]*\) | relative_url }}\"|href=\"{{ \1 | relative_url }}?v=${{ github.run_number }}\"|g" \ 
-          -e "s|src=\"{{ \([^|]*\) | relative_url }}\"|src=\"{{ \1 | relative_url }}?v=${{ github.run_number }}\"|g" \ 
-          {} +
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
@@ -65,7 +55,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url?v }}
     runs-on: ubuntu-latest
     needs: build
     steps:
