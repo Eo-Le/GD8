@@ -48,7 +48,7 @@ jobs:
         env:
           JEKYLL_ENV: production
       - name: Add cache-busting query strings
-        run: | # Append a unique query string (?v=GITHUB_RUN_NUMBER) to CSS/JS references with relative_url
+        run: |
           find _site -name '*.html' -exec sed -i \
           -e "s|href=\"{{ \([^\"]*\) | relative_url }}\"|href=\"{{ \1 | relative_url }}?v=${{ github.run_number }}\"|g" \
           -e "s|src=\"{{ \([^\"]*\) | relative_url }}\"|src=\"{{ \1 | relative_url }}?v=${{ github.run_number }}\"|g" \
