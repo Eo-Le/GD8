@@ -50,8 +50,8 @@ jobs:
       - name: Add cache-busting query strings
         run: |
           find _site -name '*.html' -exec sed -i \
-          -e "s|href=\"{{ \([^\"]*\) | relative_url }}\"|href=\"{{ \1 | relative_url }}?v=${{ github.run_number }}\"|g" \
-          -e "s|src=\"{{ \([^\"]*\) | relative_url }}\"|src=\"{{ \1 | relative_url }}?v=${{ github.run_number }}\"|g" \
+          -e "s|href=\"{{ \([^|]*\) | relative_url }}\"|href=\"{{ \1 | relative_url }}?v=${{ github.run_number }}\"|g" \
+          -e "s|src=\"{{ \([^|]*\) | relative_url }}\"|src=\"{{ \1 | relative_url }}?v=${{ github.run_number }}\"|g" \
           {} +
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
