@@ -1,4 +1,4 @@
-last_commit: "{{ site.time | date: '%Y-%m-%d' }}"
+last_commit: "{{ site.time | date: '%Y-%m-%d %H:%M:%S' }}"
 
 title: "Jekyll Actions Demo"
 
