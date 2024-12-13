@@ -1,12 +1,12 @@
 ---
-title: GD8 test10
+title: GD8 test12
 ---
 <h1>{{ page.title }}</h1>
-<p>- Sidst opdateret: {{ site.time | date: '%d-%m-%Y %H:%M:%S' }}</p>
-<p>- Antal dage siden sidste opdatering: {{ site.time | timeago }}</p>
+<p>Sidst opdateret: {{ site.time | date: '%d-%m-%Y %H:%M:%S %Z' }}</p>
+<p>Antal dage siden sidste opdatering: {{ site.time | timeago }}</p>
 <hr></hr>
 
-<button onclick="" class="btn btn-primary">Klik mig assets/js/sript.js</button>
+<button onclick="" class="btn btn-primary">Klik mig assets/js/script.js</button>
 <br>
 <button class="btn btn-secondary" onclick="alert('Inline js')">Klik mig inline!</button>
 <br>

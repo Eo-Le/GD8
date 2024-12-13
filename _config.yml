@@ -1,4 +1,9 @@
-last_commit: "{{ site.time | date: '%Y-%m-%d %H:%M:%S' }}"
+lang: da
+
+# Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
+timezone: Europe/Copenhagen
+
+# last_commit: "{{ site.time | date: '%Y-%m-%d %H:%M:%S' }}"
 
 title: "Jekyll Actions Demo"
 
