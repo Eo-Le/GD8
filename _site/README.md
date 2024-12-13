@@ -53,8 +53,18 @@ Her samles nyttige informationer om GiaDinh8
   ```html
   <button onclick="alert('Hello! This is a simple alert message.')">Click Me!</button>
   ```
+* Rel link, works
+  ```
+  need to add front matter and relative url to index.html
+  ```
 
-  
+## Debugging error
+* error can't find favicon.ico. Not solved.
+  ```bash
+  bundle exec jekyll serve --trace --verbose
+  ```
+
+
 [^1]: [Jekyll Requirement](https://jekyllrb.com/docs/installation/#requirements)  
 [^2]: [Jekyll Quick Start](https://jekyllrb.com/docs/)  
 [^3]: [Github Actions in codespace](https://jekyllrb.com/docs/continuous-integration/github-actions/)
