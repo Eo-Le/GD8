@@ -4,7 +4,7 @@
 # documentation.
 
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Jekyll ${{ github.repository }}
+name: Jekyll GD8 #NOt allowed to used ${{ github.repository }} and so on
 
 on:
   # Runs on pushes targeting the default branch
