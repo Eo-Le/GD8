@@ -9,6 +9,11 @@
 
     <!-- add the 'last-update' meta tag to expose the current build timestamp: -->
     <meta name="last-update" content="{{ site.time | date: '%Y-%m-%d %H:%M:%S' }}">
+    <!-- try fixing caching problem on gh pages -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     
     <title>{{ page.title }}</title>
 
