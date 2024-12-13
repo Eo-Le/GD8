@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- add the 'last-update' meta tag to expose the current build timestamp.  -->
-    <!-- the 'last-update' key and value is used in the assets/js/update-check.js -->
+    <!-- the 'last-update' key and value is used in the assets/js/update-check.js to store on local machine -->
     <meta name="last-update" content="{{ site.time | date: '%Y-%m-%d %H:%M:%S' }}">
     
     <title>{{ page.title }}</title>
@@ -28,7 +28,7 @@
 <body>
     
     {{ content }}
-    
+
     <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/update-check.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/cookie.js' | relative_url }}"></script>
