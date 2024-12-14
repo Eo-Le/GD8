@@ -12,7 +12,7 @@ title: GD8 Fødselsdag Test15
 <br>
 <div class="btn btn-danger" onclick="alert('Udadada din lille frække')">Klik Ren bootstrap knap</div>
 
-<div class="container-fluid overflow-auto d-flex text-center image-row"" style="height: 250px">
+<div class="container-fluid d-flex align-items-center overflow-auto text-center border border-2" style="height: 250px">
 	{% assign sorted_people = site.data.people | sort: "age" %}
 	{% for person in sorted_people %}
 		<div class="px-1">

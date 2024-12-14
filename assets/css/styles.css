@@ -19,3 +19,9 @@
     .image-row img:hover {
         scale: 1.2;
     }
+
+
+    .rounded-circle {
+        width: 200px; 
+        height: 100px;
+    }
