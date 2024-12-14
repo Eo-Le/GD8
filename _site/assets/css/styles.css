@@ -24,9 +24,12 @@
     .rounded-circle {
         width: 100px; 
         height: 100px;
+        background-color: blue;
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
     }
 
     .rounded-circle:hover {
+        background-color: green;
         scale: 1.2;
         border: solid, black
     }
