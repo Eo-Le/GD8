@@ -34,7 +34,7 @@
         border: solid, black
     }
 
-    .rounded-circle:active {
+    .rounded-circle.active {
         background-color: green;
         scale: 1.2;
         border: solid, black
