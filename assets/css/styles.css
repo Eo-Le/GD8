@@ -25,3 +25,8 @@
         width: 100px; 
         height: 100px;
     }
+
+    .rounded-circle:hover {
+        scale: 1.2;
+        border: solid, black
+    }
