@@ -6,7 +6,7 @@
 /* fix 100px works best on mobile devices */
 .custom-img-container img {
     border: 10px solid, black;
-    width: 300px; 
+    width: 100px; 
     height: 100px;
     scroll-snap-align: center;  /* Snap alignment for scrolling.??? Don't know how this work??? */
     scroll-snap-type: x mandatory;  /* Smooth scrolling behavior.??? Don't know how this work??? */ 
