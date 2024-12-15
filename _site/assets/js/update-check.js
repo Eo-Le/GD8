@@ -1,3 +1,5 @@
+console.log("loaded: update-check.js");
+
 // Fetch the current update timestamp from the meta tag
 const currentUpdate = document.querySelector('meta[name="last-update"]').getAttribute('content');
 

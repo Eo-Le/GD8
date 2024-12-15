@@ -1,0 +1,13 @@
+---
+layout: null
+---
+[
+{% assign peopleSortByAge = site.data.people | where_exp: "person", "person.dob contains '-05-'" | sort: "dob" | reverse %}
+{% for person in peopleSortByAge %}
+  {
+    "name": "{{ person.name }}",
+    "dob": "{{ person.dob }}",
+    "img": "{{ person.img }}"
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]
