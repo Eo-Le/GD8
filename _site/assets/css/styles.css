@@ -5,33 +5,40 @@
     scrollbar-width: none;    /* Firefox */
     }
     
-    .image-row img {
-    width: 30vw; /* Each image takes one-third of the viewport */
-    height: 40%; /* Maintain aspect ratio */
-    scroll-snap-align: center;  /* Snap alignment for scrolling */
-    }
+.image-row img {
+width: 30vw; /* Each image takes one-third of the viewport */
+height: 40%; /* Maintain aspect ratio */
+scroll-snap-align: center;  /* Snap alignment for scrolling */
+}
     
-    /* Hide scrollbar (optional) */
-    .image-row::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .image-row img:hover {
-        scale: 1.2;
-    }
+/* Hide scrollbar (optional) */
+.custom-img-container::-webkit-scrollbar {
+    display: none;
+}
 
+.custom-img-container img {
+    width: 10vw; 
+    height: 10vw;
+}
 
+.custom-img-container img:hover {
+    scale: 1.2;
+    border: 3px solid, black;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/*
     .rounded-circle {
         width: 100px; 
         height: 100px;
-        background-color: blue;
-        transition: all 0.3s ease; /* Smooth transition for hover effects */
     }
+
 
     .rounded-circle:hover {
         background-color: green;
         scale: 1.2;
         border: solid, black
+        transition: all 0.3s ease; /* Smooth transition for hover effects */
     }
 
     .rounded-circle.active {
@@ -45,3 +52,4 @@
         scale: 1.2;
         border: solid, black
     }
+        */
