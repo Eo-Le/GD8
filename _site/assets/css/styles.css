@@ -4,18 +4,17 @@
 }
 
 /* fix 100px works best on mobile devices */
+/* border styling doesn't work on mobile device */
 .custom-img-container img {
-    border: 10px solid, black;
     width: 100px; 
     height: 100px;
-    scroll-snap-align: center;  /* Snap alignment for scrolling.??? Don't know how this work??? */
-    scroll-snap-type: x mandatory;  /* Smooth scrolling behavior.??? Don't know how this work??? */ 
-    scrollbar-width: none;    /* Firefox */
+    /* scroll-snap-align: center; */  /* Snap alignment for scrolling.??? Don't know how this work??? */
+    /* scroll-snap-type: x mandatory; */  /* Smooth scrolling behavior.??? Don't know how this work??? */ 
+    /* scrollbar-width: none; */    /* Firefox.??? Don't think this is necessary??? */
     /* -ms-overflow-style: none;  */ /* IE and Edge.??? Don't think this is necessary??? */   
 }
 
 .custom-img-container img:hover {
     scale: 1.2;
-    border: 30px solid, black;
     transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
