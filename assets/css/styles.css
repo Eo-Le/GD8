@@ -3,10 +3,11 @@
     display: none; /* Works on PC not on mobile */
 }
 
-/* vw works best on mobile and is responsive when the screen is flip (horizontal vs vertical) */
+/* fix 100px works best on mobile devices */
 .custom-img-container img {
-    width: 10vw; 
-    height: 10vw;
+    border: 10px solid, black;
+    width: 100px; 
+    height: 100px;
     scroll-snap-align: center;  /* Snap alignment for scrolling.??? Don't know how this work??? */
     scroll-snap-type: x mandatory;  /* Smooth scrolling behavior.??? Don't know how this work??? */ 
     scrollbar-width: none;    /* Firefox */
