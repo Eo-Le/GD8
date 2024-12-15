@@ -19,6 +19,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
+    <!-- add following to ensure css content is updated with updated content of the website: ?v={{ site.time | date: '%Y%m%d%H%M%S' }}   -->
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
 
     <!-- bootstrap v.5.3-->
