@@ -6,7 +6,7 @@ const previousUpdate = localStorage.getItem('lastUpdate');
 
 // Compare timestamps to detect updates
 if (previousUpdate && previousUpdate !== currentUpdate) {
-    alert(`Hjemmesiden er opdateret siden sidst\nGamle opdatering, dato: ${previousUpdate}\nNy opdatering, dato: ${currentUpdate}\n\n!DU SKAL CLEAR BROWSEREN FOR AT ANVENDE NYESTE CSS FEATURES`);
+    alert(`Hjemmesiden er opdateret siden sidst\nGamle opdatering, dato: ${previousUpdate}\nNy opdatering, dato: ${currentUpdate}\n\n!DU SKAL CLEAR BROWSERING DATA FOR AT ANVENDE NYESTE CSS FEATURES`);
 } else {
     // do nothing
 }
