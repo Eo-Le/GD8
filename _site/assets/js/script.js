@@ -1,4 +1,4 @@
-console.log("loaded: update-check.js");
+console.log("loaded: assets/js/script.js");
 
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('button').addEventListener('click', function () {

@@ -75,7 +75,23 @@ title: GD8 Fødselsdag
 <div id="calc-ppl-in-dec">
 </div>
   
+<script src="{{ '/assets/js/calc-ppl-in-jan.js' | relative_url }}"></script>
 
-<script>
-</script>
+
   
+ 
+<script>
+	const siteUrl = "{{ site.url }}";
+	const fetchUrl = (siteUrl === "https://eo-le.github.io/GD8") ? "{{ '/GD8/api-ppl-in-jan.html' | relative_url }}" 
+	: "{{ '/api-ppl-in-jan.html' | relative_url }}";
+
+	console.log(`test fetchUrl: ${fetchUrl}`);
+
+	myFunction(fetchUrl); // Call the function
+</script>
+
+  
+  
+codespaceName 
+    ? `https://${codespaceName}-4000.app.github.dev/`
+    : "http://localhost:4000"; // Fallback for local development
