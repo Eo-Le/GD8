@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch('/api-ppl-in-jan.html') // Ensure the endpoint returns JSON
+    // const baseurl = "{{ site.baseurl }}"; // Inject baseurl dynamically using Liquid
+fetch(`/GD8/api-ppl-in-nov.html`)// Ensure the endpoint returns JSON
         .then(response => {
             if (!response.ok) throw new Error('Network response was not ok');
             return response.json();
