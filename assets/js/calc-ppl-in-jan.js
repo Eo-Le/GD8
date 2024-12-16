@@ -1,5 +1,5 @@
 console.log("loaded: assets/js/calc-ppl-in-jan.js")
-function myFunction(fetchUrl) {
+function calcPeopleFilteredOnMonth(fetchUrl, containerID) {
     
 fetch(fetchUrl)// Ensure the endpoint returns JSON
 .then(response => {
@@ -33,7 +33,7 @@ fetch(fetchUrl)// Ensure the endpoint returns JSON
     });
 
     // Dynamically render the data into the container
-    const container = document.getElementById('calc-ppl-in-jan');
+    const container = document.getElementById(containerID);
     container.innerHTML = ''; // Clear existing content
 
     // Create a d-flex container

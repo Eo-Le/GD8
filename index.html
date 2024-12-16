@@ -81,13 +81,11 @@ title: GD8 Fødselsdag
   
  
 <script>
-	const siteUrl = "{{ site.url }}";
-	const fetchUrl = (siteUrl === "https://eo-le.github.io/GD8") ? "{{ '/api-ppl-in-jan.html' | relative_url }}" 
-	: "{{ '/api-ppl-in-jan.html' | relative_url }}";
+	const fetchUrlJan = "{{ '/api-ppl-in-jan.html' | relative_url }}";
+	const fetchUrlFeb = "{{ '/api-ppl-in-feb.html' | relative_url }}";
 
-	console.log(`test fetchUrl: ${fetchUrl}`);
-
-	myFunction(fetchUrl); // Call the function
+	calcPeopleFilteredOnMonth(fetchUrlJan, 'calc-ppl-in-jan'); // Call the function
+	calcPeopleFilteredOnMonth(fetchUrlFeb, 'calc-ppl-in-feb'); // Call the function
 </script>
 
   
