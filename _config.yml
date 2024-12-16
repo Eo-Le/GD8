@@ -5,7 +5,7 @@ timezone: Europe/Copenhagen
 
 title: "GD8 Fødselsdage"
 
-url: "https://eo-le.github.io/GD8"
+url: "https://gd8.dk"
 baseurl: "" # only use if the jekyll project is in a subfolder
 
 # layouts applied to different type of paths. If type is omitted then root directory is applied
