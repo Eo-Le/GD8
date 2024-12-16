@@ -2,7 +2,7 @@ console.log("loaded: calc-dob");
 
 // Safely access after DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('calc-dob').textContent = getCurrentYear();
+    document.getElementById('calc-dob').textContent = `${getCurrentYear()} - ${getCurrentMonth()} - ${getCurrentDay()}`;
 });
 
 
@@ -27,8 +27,16 @@ function getCurrentYear() {
 
 function getCurrentMonth() {
     // Create a Date object and get the year
-    String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
-    return new Date(Date.now());
+    // String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    return new Date(Date.now()).getMonth() + 1;
+}
+
+function getCurrentDay() {
+    // Create a Date object and get the year
+    //String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    // Extract day, month, and year
+//const day = String(date.getDate()).padStart(2, '0'); // Ensure 2-digit format
+    return new Date(Date.now()).getDate();
 }
 
 

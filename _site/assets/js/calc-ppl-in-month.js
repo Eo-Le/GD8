@@ -48,7 +48,7 @@ fetch(fetchUrl)// Ensure the endpoint returns JSON
 
         personBlock.innerHTML = `
             <img class="rounded-circle" src="${person.img}" alt="${person.name}" style="width: 100px; height: 100px; object-fit: cover;">
-            <p class="pt-2"><small>${person.name}, Age: ${person.age}</small></p>
+            <p class="pt-2"><small>${person.name}, ${person.age} år</small></p>
             <p class="pt-2"><small>${person.age + 1} år om ${person.nextBirthday} dage</small></p>
         `;
 
