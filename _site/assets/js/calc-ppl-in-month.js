@@ -38,7 +38,7 @@ fetch(fetchUrl)// Ensure the endpoint returns JSON
 
     // Create a d-flex container
     const dFlexContainer = document.createElement('div');
-    dFlexContainer.className = 'container-fluid d-flex align-items-center text-center overflow-auto border border-2 bg-danger bg-gradient custom-img-container';
+    dFlexContainer.className = 'container-fluid d-flex align-items-center text-center text-white overflow-x-auto overflow-y-hidden border border-2 custom-img-container';
     dFlexContainer.style.height = '250px';
 
     // Loop through the data and create each person's block
