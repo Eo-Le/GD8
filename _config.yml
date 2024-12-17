@@ -8,6 +8,10 @@ title: "GD8 Fødselsdage"
 url: "https://gd8.dk"
 baseurl: "" # only use if the jekyll project is in a subfolder
 
+#collections:
+#  apis:
+#    output: true
+
 # layouts applied to different type of paths. If type is omitted then root directory is applied
 defaults:
   - scope:
@@ -24,15 +28,14 @@ defaults:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-#exclude:
-#  - .sass-cache/
-#  - .jekyll-cache/
-#  - gemfiles/
-#  - Gemfile
-#  - Gemfile.lock
-#  - node_modules/
-#  - vendor/bundle/
-#  - vendor/cache/
-#  - vendor/gems/
-#  - vendor/ruby/
-#  - _data
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
