@@ -6,6 +6,7 @@ source "https://rubygems.org"
 
 # gem "rails"
 gem "jekyll"
+gem 'jekyll-feed'
 
 #gem "jekyll", "~> 4.2"
 

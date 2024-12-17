@@ -12,6 +12,7 @@ baseurl: "" # only use if the jekyll project is in a subfolder
 #  apis:
 #    output: true
 
+
 # layouts applied to different type of paths. If type is omitted then root directory is applied
 defaults:
   - scope:
@@ -19,6 +20,11 @@ defaults:
     values:
       layout: "default"
 
+
+
+plugins:
+  - jekyll-feed
+  
 
 # Exclude from processing.
 # The following items will not be processed, by default.
