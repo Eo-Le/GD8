@@ -2,7 +2,7 @@ console.log("loaded: calc-dob");
 
 // Safely access after DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('calc-dob').textContent = `${getCurrentYear()} - ${getCurrentMonth()} - ${getCurrentDay()}`;
+    document.getElementById('calc-dob').textContent = `Dato: ${getCurrentDay()}-${getCurrentYear()}-${getCurrentMonth()}`;
 });
 
 

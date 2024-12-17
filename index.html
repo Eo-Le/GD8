@@ -1,17 +1,17 @@
 ---
 title: GD8 Fødselsdag
 ---
-<h1>{{ page.title }}</h1>
-<div id="calc-dob"></div>
-<p>Sidst opdateret: {{ site.time | date: '%d-%m-%Y %H:%M:%S %Z' }}</p>
+<h1 class="display-1 fw-bolder">{{ page.title }}</h1>
+<div class="fw-light" id="calc-dob"></div>
+<p class="fst-italic">Sidst opdateret: {{ site.time | date: '%d-%m-%Y %H:%M:%S %Z' }}</p>
 <!-- <p>Antal dage siden: {{ site.time | timeago }} </p> -->
 <hr>
 <div class="alert alert-warning" role="alert">Rettet Sandras fødselsdag</div>
 <div class="alert alert-warning" role="alert">Rettet Raymonds fødselsdag</div>
-<button type="" class="btn btn-sm btn-danger m-5" onclick="alert(`Din uartig bølle!!!\nDu kan hvis ikke lade knappen være.\nPAS PÅ DIN MOBIL IKKE EKSPLODER!`)">Lad vær med at klikke denne knap!</button>
+<button type="" class="btn bn-sm btn-danger m-5" onclick="alert(`Din uartig bølle!!!\nDu kan hvis ikke lade knappen være.\nPAS PÅ DIN MOBIL IKKE EKSPLODER!`)">Lad vær med at klikke denne knap!</button>
 
-<h1>Alle GD8 medlemmer</h1><hr>
-<div class="container-fluid d-flex align-items-center text-center text-white overflow-x-auto overflow-y-hidden border border-2 custom-img-container" style="height: 250px; background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s')">
+<h1 class="display-5 fw-bold text-decoration-underline">Alle GD8 medlemmer</h1>
+<div class="container-fluid d-flex align-items-center text-center text-white overflow-x-auto overflow-y-hidden border border-2 custom-img-container">
 	{% assign sorted_people = site.data.people | sort: "dob" %}
 	{% for person in sorted_people %}
 		<div class="p-3">
@@ -21,67 +21,68 @@ title: GD8 Fødselsdag
 	{% endfor %}
 </div>
 
+<div class="pb-5"></div>
 
-<h1 class="pt-5">Personer født i januar</h1><hr>
-<div id="calc-ppl-in-jan" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s')"></div>
+<h1 class="display-5 fw-bold text-decoration-underline text-decoration-underline">Personer født i januar</h1>
+<div id="calc-ppl-in-jan"></div>
 
 <div class="pb-5"></div>
 
-<h1>Personer født i februar</h1><hr>
-<div id="calc-ppl-in-feb" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s')"></div>
+<h1 class="display-5 fw-bold text-decoration-underline">Personer født i februar</h1>
+<div id="calc-ppl-in-feb"></div>
 
 <div class="pb-5"></div>
 
-<h1>Personer født i marts</h1><hr>
-<div id="calc-ppl-in-mar" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s')"></div>
+<h1 class="display-5 fw-bold text-decoration-underline">Personer født i marts</h1>
+<div id="calc-ppl-in-mar"></div>
 
 <div class="pb-5"></div>
 
-<h1>Personer født i april</h1><hr>
-<div id="calc-ppl-in-apr" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s')"></div>
+<h1 class="display-5 fw-bold text-decoration-underline">Personer født i april</h1>
+<div id="calc-ppl-in-apr"></div>
 
 <div class="pb-5"></div>
 
-<h1>Personer født i maj</h1><hr>
-<div id="calc-ppl-in-may" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s')"></div>
-
-<div class="pb-5"></div>
-
-
-<h1>Personer født i juni</h1><hr>
-<div id="calc-ppl-in-jun" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s')"></div>
+<h1 class="display-5 fw-bold text-decoration-underline">Personer født i maj</h1>
+<div id="calc-ppl-in-may"></div>
 
 <div class="pb-5"></div>
 
 
-<h1>Personer født i juli</h1><hr>
-<div id="calc-ppl-in-jul" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s')"></div>
+<h1 class="display-5 fw-bold text-decoration-underline">Personer født i juni</h1>
+<div id="calc-ppl-in-jun"></div>
 
 <div class="pb-5"></div>
 
 
-<h1>Personer født i august</h1><hr>
-<div id="calc-ppl-in-aug" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s')"></div>
+<h1 class="display-5 fw-bold text-decoration-underline">Personer født i juli</h1>
+<div id="calc-ppl-in-jul"></div>
 
 <div class="pb-5"></div>
 
-<h1>Personer født i september</h1><hr>
-<div id="calc-ppl-in-sep" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s')"></div>
+
+<h1 class="display-5 fw-bold text-decoration-underline">Personer født i august</h1>
+<div id="calc-ppl-in-aug"></div>
 
 <div class="pb-5"></div>
 
-<h1>Personer født i oktober</h1><hr>
-<div id="calc-ppl-in-oct" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s')"></div>
+<h1 class="display-5 fw-bold text-decoration-underline">Personer født i september</h1>
+<div id="calc-ppl-in-sep"></div>
 
 <div class="pb-5"></div>
 
-<h1>Personer født i november</h1><hr>
-<div id="calc-ppl-in-nov" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s')"></div>
+<h1 class="display-5 fw-bold text-decoration-underline">Personer født i oktober</h1>
+<div id="calc-ppl-in-oct"></div>
 
 <div class="pb-5"></div>
 
-<h1>Personer født i december</h1><hr>
-<div id="calc-ppl-in-dec" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s')"></div>
+<h1 class="display-5 fw-bold text-decoration-underline">Personer født i november</h1>
+<div id="calc-ppl-in-nov"></div>
+
+<div class="pb-5"></div>
+
+<h1 class="display-5 fw-bold text-decoration-underline">Personer født i december</h1>
+<div id="calc-ppl-in-dec"></div>
 
 <div class="pb-5"></div>
   

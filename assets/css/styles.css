@@ -3,6 +3,11 @@
     display: none; /* Works also on mobile */
 }
 
+.custom-img-container {
+    height: 250px;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s');
+}
+
 /* fix 100px works best on mobile devices */
 /* border styling doesn't work on mobile device */
 .custom-img-container img {
