@@ -14,10 +14,10 @@
     <title>{{ page.title }}</title>
 
     <!-- links to favicon on different devices -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ /apple-touch-icon.png | relative_url }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ /favicon-32x32.png | relative_url }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ /favicon-16x16.png | relative_url }}">
-    <link rel="manifest" href="{{ /site.webmanifest | relative_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ '/apple-touch-icon.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}">
+    <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
 
     <!-- add following to ensure css content is updated with updated content of the website: ?v={{ site.time | date: '%Y%m%d%H%M%S' }}   -->
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
