@@ -9,7 +9,7 @@
     width: 100px; 
     height: 100px;
     /* scroll-snap-align: center; */  /* Snap alignment for scrolling.??? Don't know how this work??? */
-    /* scroll-snap-type: x mandatory; */  /* Smooth scrolling behavior.??? Don't know how this work??? */ 
+    scroll-snap-type: x mandatory; */  /* Smooth scrolling behavior.??? Don't know how this work??? */ 
     /* scrollbar-width: none; */    /* Firefox.??? Don't think this is necessary??? */
     /* -ms-overflow-style: none;  */ /* IE and Edge.??? Don't think this is necessary??? */   
 }
