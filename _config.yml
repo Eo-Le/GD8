@@ -8,9 +8,9 @@ title: "GD8 Fødselsdage"
 url: "https://gd8.dk"
 baseurl: "" # only use if the jekyll project is in a subfolder
 
-#collections:
-#  apis:
-#    output: true
+collections:
+  costs:
+    output: true
 
 
 # layouts applied to different type of paths. If type is omitted then root directory is applied
@@ -19,6 +19,14 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+  # if pages in folder _costs then use layout: null.
+  - scope:
+      path: ""
+      type: "costs"
+    values:
+      layout: "null"
+      title: "null"
 
 
 

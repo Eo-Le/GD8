@@ -8,7 +8,7 @@
     <!-- the 'last-update' key and value is used in the assets/js/update-check.js to store on local machine -->
     <meta name="last-update" content="2024-12-18 09:43:10">
     
-    <title>Om hjemmesiden</title>
+    <title>Udgifter</title>
 
     <!-- links to favicon on different devices -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -88,14 +88,22 @@
     <div class="fw-light" id="calc-currentDate"></div>
 <p class="fst-italic">Sidst opdateret: 18-12-2024 09:43:10 CET</p>
 <!-- <p>Antal dage siden: today </p> -->
-<h1 class="display-1 fw-bolder">Om hjemmesiden</h1><hr>
-    <p>Hjemmesiden gik i luften mandag d. 16-12-2024
-</p>
-<p>Hjemmesiden er til privatbrug og dedikeret til GiaDinh8</p>
-<p>Hjemmesiden er udviklet og ejet af GiaDinh8</p>
-<p>Hjemmesiden er hosted på github pages.</p>
-<p>Domænenavnet gd8.dk er købt hos www.simply.com</p>
-<p>dk domæne er registreret ved punktum.dk</p>
+<h1 class="display-1 fw-bolder">Udgifter</h1><hr>
+    <a href="\costs\cost1.html">cost1</a><br>
+<a href="">cost2</a>
+
+<h1 class="display-5 fw-bold text-decoration-underline">cost1</h1>
+<div id="calc-cost">Test cost coll</div>
+
+<script src="/assets/js/calc-date.js"></script>
+    <script src="/assets/js/calc-cost.js"></script>
+    <script src="/assets/js/main.js"></script>
+
+<script>
+	const fetchUrlCost1 = "/costs/cost2.html";
+
+	calcCost(fetchUrlCost1, 'calc-cost'); // Call the function
+</script>
     
 
 

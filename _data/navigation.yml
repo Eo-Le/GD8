@@ -1,10 +1,8 @@
 - name: Hjem
   link: /
-- name: Begivenhed
-  link: /event.html
-- name: Udgift
-  link: /cost.html
+- name: Begivenheder
+  link: /events.html
+- name: Udgifter
+  link: /costs.html
 - name: Om
   link: /about.html/
-- name: RSS
-  link: /feed.xml

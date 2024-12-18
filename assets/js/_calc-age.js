@@ -1,3 +1,5 @@
+console.log("loaded: assets/js/_calc-age.js")
+
 fetch('/api-people.html')
     .then(response => response.json())
     .then(data => {

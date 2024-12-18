@@ -1,0 +1,19 @@
+---
+title: Udgifter
+---
+
+<a href="\costs\cost1.html">cost1</a><br>
+<a href="{{ site.date.costs.item.2 }}">cost2</a>
+
+<h1 class="display-5 fw-bold text-decoration-underline">cost1</h1>
+<div id="calc-cost">Test cost coll</div>
+
+<script src="{{ '/assets/js/calc-date.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/calc-cost.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+<script>
+	const fetchUrlCost1 = "{{ '/costs/cost2.html' | relative_url }}";
+
+	calcCost(fetchUrlCost1, 'calc-cost'); // Call the function
+</script>
