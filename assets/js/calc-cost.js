@@ -22,7 +22,7 @@ function calcCost(fetchUrl, containerID) {
             // Get the container element
             const container = document.getElementById(containerID);
             container.className = 'overflow-auto';
-            container.style.max-height = '800px';
+            container.style.maxHeight = '800px';
             container.innerHTML = ''; // Clear existing content
 
             // Create a table

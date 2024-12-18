@@ -1,4 +1,12 @@
 ---
 title: Begivenheder
 ---
-<p>Ingen begivenheder er oprettet</p>
+
+<div id="calc-event">Tabeloversigt over begivenhederne.</div>
+
+<script src="{{ '/assets/js/calc-event.js' | relative_url }}"></script>
+
+<script>
+	const fetchUrlEvents = "{{ '/events/events.html' | relative_url }}";
+	calcEvent(fetchUrlEvents, 'calc-event'); // Call the function
+</script>

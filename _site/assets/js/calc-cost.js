@@ -1,53 +1,69 @@
-console.log("loaded: assets/js/calc-cost.js")
+console.log("loaded: assets/js/calc-cost.js");
 
 function calcCost(fetchUrl, containerID) {
-    
-fetch(fetchUrl)// Ensure the endpoint returns JSON
-.then(response => {
-    if (!response.ok) throw new Error('Network response was not ok');
-    return response.json();
-})
-.then(data => {
-    const today = new Date();
 
-    // Process data: Calculate age dynamically
-    const processedData = data.map(cost => {
-        // const date = new Date(cost.date);
+    fetch(fetchUrl) // Ensure the endpoint returns JSON
+        .then(response => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.json();
+        })
+        .then(data => {
+            // Process data: Map relevant properties and add currency to bill
+            const processedData = data.map(cost => {
+                return {
+                    creditor: cost.creditor,
+                    date: cost.date,
+                    bill: parseFloat(cost.bill).toFixed(2) + " DKK", // Format bill as currency
+                    period: cost.period,
+                    description: cost.description
+                };
+            });
 
-        return {
-            creditor: cost.creditor,
-            date: cost.date,
-            bill: cost.bill,
-            period: cost.period,
-            description: cost.description
-        };
-    });
+            // Get the container element
+            const container = document.getElementById(containerID);
+            container.className = 'overflow-auto';
+            container.style.maxHeight = '800px';
+            container.innerHTML = ''; // Clear existing content
 
-    // Dynamically render the data into the container
-    const container = document.getElementById(containerID);
-    container.innerHTML = ''; // Clear existing content
+            // Create a table
+            const table = document.createElement('table');
+            table.className = 'table table-sm table-striped table-bordered';
 
-    // Create a d-flex container
-    const dFlexContainer = document.createElement('div');
-    dFlexContainer.className = 'container-fluid d-flex align-items-center text-center text-white overflow-x-auto overflow-y-hidden border border-2 custom-img-container';
-    dFlexContainer.style.height = '250px';
+            // Create the table header
+            const thead = document.createElement('thead');
+            thead.className ='table-info';
+            const headerRow = document.createElement('tr');
 
-    // Loop through the data and create each cost's block
-    processedData.forEach(cost => {
-        const costBlock = document.createElement('div');
-        costBlock.className = 'p-3'; // Padding for each cost's content
+            // Define headers
+            const headers = ['Kreditor', 'Dato', 'Beløb', 'Periode', 'Beskrivelse'];
+            headers.forEach(headerText => {
+                const th = document.createElement('th');
+                th.textContent = headerText;
+                headerRow.appendChild(th);
+            });
 
-        costBlock.innerHTML = `
-            <p class="pt-2"><small>${cost.creditor}, ${cost.date}</small></p>
-            <p class="pt-2"><small>${cost.bill}, ${cost.period}, ${cost.description}</small></p>
-            <p class="pt-2"><small>${cost.description}</small></p>
-        `;
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
 
-        dFlexContainer.appendChild(costBlock); // Append each cost block to the d-flex container
-    });
+            // Create the table body
+            const tbody = document.createElement('tbody');
 
-    container.appendChild(dFlexContainer); // Append the d-flex container to the main container
-})
-.catch(error => console.error('Error fetching or processing data:', error));
+            processedData.forEach(cost => {
+                const row = document.createElement('tr');
+
+                // Add cells for each property
+                Object.values(cost).forEach(value => {
+                    const td = document.createElement('td');
+                    td.textContent = value;
+                    row.appendChild(td);
+                });
+
+                tbody.appendChild(row);
+            });
+
+            table.appendChild(tbody);
+            container.appendChild(table); // Append the table to the container
+        })
+        .catch(error => console.error('Error fetching or processing data:', error));
 
 }

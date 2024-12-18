@@ -13,6 +13,8 @@ collections:
     output: true
   people:
     output: true
+  events:
+    output: true
 
 
 # layouts applied to different type of paths.
@@ -29,6 +31,14 @@ defaults:
   - scope:
       path: ""
       type: "people"
+    values:
+      layout: "null"
+      title: "null"
+
+  # if pages in folder _events then use layout: null.
+  - scope:
+      path: ""
+      type: "events"
     values:
       layout: "null"
       title: "null"
