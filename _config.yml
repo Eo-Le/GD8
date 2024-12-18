@@ -11,14 +11,12 @@ baseurl: "" # only use if the jekyll project is in a subfolder
 collections:
   costs:
     output: true
+  people:
+    output: true
 
 
-# layouts applied to different type of paths. If type is omitted then root directory is applied
+# layouts applied to different type of paths.
 defaults:
-  - scope:
-      path: ""
-    values:
-      layout: "default"
 
   # if pages in folder _costs then use layout: null.
   - scope:
@@ -26,8 +24,21 @@ defaults:
       type: "costs"
     values:
       layout: "null"
-      title: "null"
 
+  # if pages in folder _people then use layout: null.
+  - scope:
+      path: ""
+      type: "people"
+    values:
+      layout: "null"
+      title: "null"
+  
+  # If type is omitted then root directory is applied
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      title: "null"
 
 
 plugins:

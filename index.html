@@ -1,9 +1,8 @@
 ---
 title: GD8 Fødselsdag
 ---
-<div class="alert alert-warning" role="alert">Rettet Sandras fødselsdag</div>
-<div class="alert alert-warning" role="alert">Rettet Raymonds fødselsdag</div>
-<button type="" class="btn bn-sm btn-danger m-5" onclick="alert(`Din uartig bølle!!!\nDu kan hvis ikke lade knappen være.\nPAS PÅ DIN MOBIL IKKE EKSPLODER!`)">Lad vær med at klikke denne knap!</button>
+<div class="alert alert-warning" role="alert">Ændret Jackys billede<hr>Tak Felix!</div>
+<button type="" class="btn bn-sm btn-danger m-5" onclick="alert(`Din uartige bølle!!!\nDu kan hvis ikke lade knappen være.\nPAS PÅ DIN MOBIL IKKE EKSPLODER!`)">Lad vær med at klikke denne knap!</button>
 
 <h1 class="display-5 fw-bold text-decoration-underline">Alle GD8 medlemmer</h1>
 <div class="container-fluid d-flex align-items-center text-center text-white overflow-x-auto overflow-y-hidden border border-2 custom-img-container">
@@ -86,29 +85,31 @@ title: GD8 Fødselsdag
 
 
 <script>
-	const fetchUrlJan = "{{ '/api-ppl-in-jan.html' | relative_url }}";
-	const fetchUrlFeb = "{{ '/api-ppl-in-feb.html' | relative_url }}";
-	const fetchUrlMar = "{{ '/api-ppl-in-mar.html' | relative_url }}";
-	const fetchUrlApr = "{{ '/api-ppl-in-apr.html' | relative_url }}";
-	const fetchUrlMay = "{{ '/api-ppl-in-may.html' | relative_url }}";
-	const fetchUrlJun = "{{ '/api-ppl-in-jun.html' | relative_url }}";
-	const fetchUrlJul = "{{ '/api-ppl-in-jul.html' | relative_url }}";
-	const fetchUrlAug = "{{ '/api-ppl-in-aug.html' | relative_url }}";
-	const fetchUrlSep = "{{ '/api-ppl-in-sep.html' | relative_url }}";
-	const fetchUrlOct = "{{ '/api-ppl-in-oct.html' | relative_url }}";
-	const fetchUrlNov = "{{ '/api-ppl-in-nov.html' | relative_url }}";
-	const fetchUrlDec = "{{ '/api-ppl-in-dec.html' | relative_url }}";
-
-	calcPeopleFilteredOnMonth(fetchUrlJan, 'calc-ppl-in-jan'); // Call the function
-	calcPeopleFilteredOnMonth(fetchUrlFeb, 'calc-ppl-in-feb'); // Call the function
-	calcPeopleFilteredOnMonth(fetchUrlMar, 'calc-ppl-in-mar'); // Call the function
-	calcPeopleFilteredOnMonth(fetchUrlApr, 'calc-ppl-in-apr'); // Call the function
-	calcPeopleFilteredOnMonth(fetchUrlMay, 'calc-ppl-in-may'); // Call the function
-	calcPeopleFilteredOnMonth(fetchUrlJun, 'calc-ppl-in-jun'); // Call the function
-	calcPeopleFilteredOnMonth(fetchUrlJul, 'calc-ppl-in-jul'); // Call the function
-	calcPeopleFilteredOnMonth(fetchUrlAug, 'calc-ppl-in-aug'); // Call the function
-	calcPeopleFilteredOnMonth(fetchUrlSep, 'calc-ppl-in-sep'); // Call the function
-	calcPeopleFilteredOnMonth(fetchUrlOct, 'calc-ppl-in-oct'); // Call the function
-	calcPeopleFilteredOnMonth(fetchUrlNov, 'calc-ppl-in-nov'); // Call the function
-	calcPeopleFilteredOnMonth(fetchUrlDec, 'calc-ppl-in-dec'); // Call the function
+	const fetchUrlJan = "{{ '/people/ppl-in-jan.html' | relative_url }}";
+	const fetchUrlFeb = "{{ '/people/ppl-in-feb.html' | relative_url }}";
+	const fetchUrlMar = "{{ '/people/ppl-in-mar.html' | relative_url }}";
+	const fetchUrlApr = "{{ '/people/ppl-in-apr.html' | relative_url }}";
+	const fetchUrlMay = "{{ '/people/ppl-in-may.html' | relative_url }}";
+	const fetchUrlJun = "{{ '/people/ppl-in-jun.html' | relative_url }}";
+	const fetchUrlJul = "{{ '/people/ppl-in-jul.html' | relative_url }}";
+	const fetchUrlAug = "{{ '/people/ppl-in-aug.html' | relative_url }}";
+	const fetchUrlSep = "{{ '/people/ppl-in-sep.html' | relative_url }}";
+	const fetchUrlOct = "{{ '/people/ppl-in-oct.html' | relative_url }}";
+	const fetchUrlNov = "{{ '/people/ppl-in-nov.html' | relative_url }}";
+	const fetchUrlDec = "{{ '/people/ppl-in-dec.html' | relative_url }}";
+	
+	// Call the functions from assets/js/calc-ppl-in-month.js
+	calcPeopleFilteredOnMonth(fetchUrlJan, 'calc-ppl-in-jan'); 
+	calcPeopleFilteredOnMonth(fetchUrlFeb, 'calc-ppl-in-feb'); 
+	calcPeopleFilteredOnMonth(fetchUrlMar, 'calc-ppl-in-mar'); 
+	calcPeopleFilteredOnMonth(fetchUrlApr, 'calc-ppl-in-apr'); 
+	calcPeopleFilteredOnMonth(fetchUrlMay, 'calc-ppl-in-may'); 
+	calcPeopleFilteredOnMonth(fetchUrlJun, 'calc-ppl-in-jun'); 
+	calcPeopleFilteredOnMonth(fetchUrlJul, 'calc-ppl-in-jul'); 
+	calcPeopleFilteredOnMonth(fetchUrlAug, 'calc-ppl-in-aug'); 
+	calcPeopleFilteredOnMonth(fetchUrlSep, 'calc-ppl-in-sep'); 
+	calcPeopleFilteredOnMonth(fetchUrlOct, 'calc-ppl-in-oct'); 
+	calcPeopleFilteredOnMonth(fetchUrlNov, 'calc-ppl-in-nov'); 
+	calcPeopleFilteredOnMonth(fetchUrlDec, 'calc-ppl-in-dec'); 
+	
 </script>
