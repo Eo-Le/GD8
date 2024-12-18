@@ -9,7 +9,7 @@ name: Jekyll GD8 seedData #NOt allowed to used variables, e.g. ${{ github.reposi
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["seedData"]
+    branches: ["navigationBar"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
