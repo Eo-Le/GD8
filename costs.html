@@ -15,14 +15,20 @@ First_cost: <pre>{{ first_cost }}</pre>
 
 keys before split: <pre>{{ keys }}</pre>
 <br>
+{% for cost in site.data.costs %}
+	{% for key in keys %}
+		before split, cost[key]: {{ cost[key] }}
+	{% endfor %}
+{% endfor %}
+<br>
 
-{% assign keys = keys | split: "," %}
+{% assign keys = keys | split: "," | jsonify %}
 keys after split: <pre>{{ keys }}</pre>
 
 <br>
 {% for cost in site.data.costs %}
 	{% for key in keys %}
-		cost[key]: {{ cost[key] }}
+		after split, jsonify, cost[key]: {{ cost[key] }}
 	{% endfor %}
 {% endfor %}
 
