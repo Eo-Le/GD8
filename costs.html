@@ -18,7 +18,8 @@ title: Udgifter
     <table class="table table-striped">
         <thead>
             <tr>
-		{% assign keys = site.data.costs[0] | keys %}
+		{% assign first_cost = site.data.costs[0] | keys %}
+		{% assign keys = first_cost | jsonify | split: "," | replace: "{", "" | replace: "}", "" %}    
 		{% for key in keys %}
 			<th>{{ key }}</th>
 		{% endfor %}
