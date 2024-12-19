@@ -28,7 +28,7 @@ title: Udgifter
 		{% for cost in site.data.costs %}
 			<tr>
 				{% for key0Value1 in first_cost %}
-					<td>{{ key0Value1[1] }}</td>
+					<td>{{ cost[key0Value1[0]] }}</td>
 				{% endfor %}
 			</tr>
 		{% endfor %}
