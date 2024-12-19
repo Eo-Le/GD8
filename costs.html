@@ -3,14 +3,25 @@ title: Udgifter
 ---
 
 <h1>TEST rendering of table content using Liquid</h1>
-{% assign first_cost = site.data.costs[0] | jsonify %}
+{% assign first_cost = site.data.costs[0] %}
 First_cost: <pre>{{ first_cost }}</pre>
 <br>
-{% assign key0value1 = first_cost %}
-key0value1:  <pre>{{ key0value1 }}</pre>
+
+{% assign keys = "" %}
+{% for key0Value1 in first_cost %}
+    {% assign keys = keys | append: key0Value1[0] | append: "," %}
+{% endfor %}
+<br>
+
+keys before split: <pre>{{ keys }}</pre>
+<br>
+
+{% assign keys = keys | split: "," %}
+keys after split: <pre>{{ keys }}</pre>
+
 <br>
 {% for cost in site.data.costs %}
-	{% for key in key0value1 %}
+	{% for key in keys %}
 		cost[key]: {{ cost[key] }}
 	{% endfor %}
 {% endfor %}
