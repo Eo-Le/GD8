@@ -3,17 +3,15 @@ title: Udgifter
 ---
 
 <h1>TEST rendering af table content using Liquid</h1>
-{% assign first_cost = site.data.costs[0] %}
+{% assign first_cost = site.data.costs[0] | jsonify %}
 {% assign keys = first_cost[0] %}
 <!--
 	{% for key in keys %}
 {% endfor %}
 -->
-<pre>{{ first_cost }}</pre>
+First_cost: <pre>{{ first_cost }}</pre>
 <br>
-<pre>{{ keys }}</pre>
-<br>
-<pre>{{ cost[key] }}</pre>
+keys:  <pre>{{ keys }}</pre>
 	
 <div class="container mt-5">
     <h2>Striped Table Example</h2>
