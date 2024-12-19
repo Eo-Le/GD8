@@ -2,16 +2,20 @@
 title: Udgifter
 ---
 
-<h1>TEST rendering af table content using Liquid</h1>
+<h1>TEST rendering of table content using Liquid</h1>
 {% assign first_cost = site.data.costs[0] | jsonify %}
-{% assign keys = first_cost[0] %}
-<!--
-	{% for key in keys %}
-{% endfor %}
--->
 First_cost: <pre>{{ first_cost }}</pre>
 <br>
-keys:  <pre>{{ keys }}</pre>
+{% assign key0value1 = first_cost %}
+key0value1:  <pre>{{ key0value1 }}</pre>
+<br>
+{% for cost in site.data.costs %}
+	{% for key in key0value1 %}
+		cost[key]: {{ cost[key] }}
+	{% endfor %}
+{% endfor %}
+
+
 	
 <div class="container mt-5">
     <h2>Striped Table Example</h2>
