@@ -18,8 +18,7 @@ title: Udgifter
     <table class="table table-striped">
         <thead>
             <tr>
-		{% assign first_cost = site.data.costs[0] %}
-	    	{% assign keys = first_cost | keys %}
+		{% assign keys = site.data.costs[0] | keys %}
 		{% for key in keys %}
 			<th>{{ key }}</th>
 		{% endfor %}
