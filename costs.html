@@ -15,7 +15,7 @@ First_cost, forloop.index0:
 
 {% assign jsonArray = "" %}
 {% for cost in first_cost %}
-  {% assign jsonElement = '["' | append: cost[0] | append: '"]' %} <!-- each key is an 1D array -->
+  {% assign jsonElement = '"' | append: cost[0] | append: '"' %} <!-- each key is an 1D array -->
   {% if forloop.first %}
     {% assign jsonArray = jsonElement %} <!-- [ "cost[key]" ] -->
   {% else %}
@@ -25,8 +25,16 @@ First_cost, forloop.index0:
 {% assign jsonArray = '{ ' | append: jsonArray | append: ' }' %} <!-- encapsule the content in {jsonArray} -->
 
 <br>
-new json Array - test 28:
+new json Array - test 29:
 jsonArray: <pre>{{ jsonArray }}</pre>
+
+<br>
+jsonArray, loop through the val in jsonArray:
+<br>
+{% for val in jsonArray %}
+	{{ val }} <br>
+{% endfor %}
+<br>
 
 <br>
 jsonArray, forloop.index0:
@@ -35,6 +43,15 @@ jsonArray, forloop.index0:
 	{{ forloop.index0 }} <br>
 {% endfor %}
 <br>
+
+{% assign array = "[\"a\", \"b\", \"c\"]" %}
+Test array:
+<pre>{{ array }}</pre>
+Test array loop:
+{% for val in array %}
+	{{ val }} <br>
+{% endfor %}
+
 
 <br>
 jsonArray, loop through val using for x in jsonArray:
