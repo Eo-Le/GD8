@@ -14,10 +14,10 @@ First_cost, forloop.index0:
 <br>
 
 <br>
-new json Array - test 39:
+new json Array - test 40:
 
 <br>
-{% assign lstOfKey = "" %}
+{% assign lstOfKey %}
 {% for cost in first_cost %}
   {% if forloop.first %}
     {% assign lstOfKey = lstOfKey | append: cost[0] %} <!--  -->
@@ -25,7 +25,6 @@ new json Array - test 39:
     {% assign lstOfKey = lstOfKey | append: "," | append: cost[0] %} <!--  -->
   {% endif %}
 {% endfor %}
-<!-- {% assign lstOfKey = '"' | append: lstOfKey | append: '"' %} -->
 
 
 {% assign lstOfKey = lstOfKey | split: "," %}
