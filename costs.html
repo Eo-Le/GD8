@@ -14,9 +14,19 @@ First_cost, forloop.index0:
 <br>
 
 {% assign keys = "" %}
-{% for key0Value1 in first_cost %}
-    {% assign keys = keys | append: key0Value1[0] | append: "," %}
+{% for key in keys %}
+  {% assign jsonElement = '"' | append: key | append: '"' %} <!-- "key" -->
+  {% if forloop.first %}
+    {% assign jsonArray = jsonElement %} <!-- { "key" -->
+  {% else %}
+    {% assign jsonArray = jsonArray | append: ", " | append: jsonElement %} <!-- "key0", "key1" -->
+  {% endif %}
 {% endfor %}
+{% assign jsonArray = '{ ' | append: jsonArray | append: ' }' %} <!-- { "key0", "key1" } -->
+<br>
+new json Array - test 19:
+jsonArray: <pre>{{ jsonArray }}</pre>
+
 <br>
 keys before split, loop through keys using for key in keys:
 <br>
@@ -72,7 +82,8 @@ after split, jsonify, forloop.index0:
   {% endif %}
 {% endfor %}
 
-new json Array - test 18:
+
+new json Array:
 <br>
 {{ jsonArray }}
 
