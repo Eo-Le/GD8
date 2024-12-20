@@ -25,13 +25,20 @@ First_cost, forloop.index0:
 {% assign jsonArray = '[ ' | append: jsonArray | append: ' ]' %} <!-- encapsule the content in {jsonArray} -->
 
 <br>
-new json Array - test 36:
+new json Array - test 37:
 
 <br>
 {% assign lstOfKey = "" %}
-{% for costKey in first_cost %}
-	{% assign lstOfKey = costKey[0] | append: lstOfKey %} <br>
+{% for cost in first_cost %}
+  {% assign arrayElement = lstOfKey | append: cost[0] %} <!-- each key is an 1D array -->
+  {% if forloop.first %}
+    {% assign lstOfKey = arrayElement %} <!-- [ "cost[key]" ] -->
+  {% else %}
+    {% assign lstOfKey = lstOfKey | append: "," | append: arrayElement %} <!-- [ "cost[key]" ], [ "cost[key]" ] -->
+  {% endif %}
 {% endfor %}
+{% assign lstOfKey = '"' | append: lstOfKey | append: '"' %} <!-- encapsule the content in {jsonArray} -->
+
 
 {% assign lstOfKey = lstOfKey | split: "," %}
 Test lstOfKey:<br>
