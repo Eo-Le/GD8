@@ -3,7 +3,7 @@ title: Udgifter
 ---
 
 <h1>TEST rendering of table content using Liquid</h1>
-{% assign first_cost = site.data.costs[0] %}
+{% assign first_cost = site.data.costs[0][0] %}
 First_cost: <pre>{{ first_cost }}</pre>
 <br>
 First_cost, forloop.index0:
@@ -24,7 +24,7 @@ First_cost, forloop.index0:
 {% endfor %}
 {% assign jsonArray = '{ ' | append: jsonArray | append: ' }' %} <!-- { "cost0", "cost1" } -->
 <br>
-new json Array - test 21:
+new json Array - test 22:
 jsonArray: <pre>{{ jsonArray }}</pre>
 
 <br>
