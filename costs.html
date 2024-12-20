@@ -14,7 +14,7 @@ First_cost, forloop.index0:
 <br>
 
 <br>
-new json Array - test 49:
+new json Array - test 51:
 
 <br>
 {% assign lstOfKey = "" %}
@@ -32,14 +32,12 @@ Test array loop:<br>
 {% endfor %}
 
 <br>
-{% for cost in site.data.costs %}
-	{% for val in lstOfKey %}
-		{% assign test = "cost." %}
-		{% assign test = test | append: val %}
-		{{ forloop.index0 }}: {{ cost }} <br>
-		{{ forloop.index0 }}: {{ val }} <br>
-		{{ forloop.index0 }}: {{ test }} <br>
-		{ forloop.index0 }}: {{ cost.val }} <br>
+{% for cost in site.data.costs %} <!-- arrays of data in costs.json -->
+	{% assign currentCostArray = cost[forloop.index0] } <!-- retrieving the array of current index -->
+	
+	{% for currentCostArrayData in currentCostArray %} <!-- accessing the array of current index -->
+		{{ forloop.index0 }}: {{ currentCostArrayData[0] }} <!-- retrieving the name of all the keys for currentCostArrayData -->
+		{{ forloop.index0 }}: {{ currentCostArrayData[1] }} <!-- retrieving the values of all the key values for currentCostArrayData -->
 	{% endfor %}
 {% endfor %}
 
