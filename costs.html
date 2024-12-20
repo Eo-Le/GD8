@@ -14,7 +14,7 @@ First_cost, forloop.index0:
 <br>
 
 <br>
-new json Array - test 41:
+new json Array - test 42:
 
 <br>
 {% assign lstOfKey = "" | split: ","  %} <!-- declare an empty array -->
@@ -26,7 +26,7 @@ new json Array - test 41:
   {% endif %}
 {% endfor %}
 
-{% assign lstOfKey = lstOfKey | split: "," %} <!-- convert to an array -->
+{% assign lstOfKey = lstOfKey | replace: "[", "" | replace: "]", "" | split: "," %} <!-- convert to an array and removing square brackets [] prefix in first item -->
 
 Test lstOfKey:<br>
 {{ lstOfKey }}<br>
