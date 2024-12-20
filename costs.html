@@ -25,116 +25,18 @@ First_cost, forloop.index0:
 {% assign jsonArray = '[ ' | append: jsonArray | append: ' ]' %} <!-- encapsule the content in {jsonArray} -->
 
 <br>
-new json Array - test 32:
-jsonArray: <pre>{{ jsonArray }}</pre>
+new json Array - test 33:
 
 <br>
-jsonArray, loop through the val in jsonArray:
-<br>
-{% for val in jsonArray %}
-	{{ forloop.index0 }}: {{ val }} <br>
-{% endfor %}
-<br>
-
-<br>
-{% assign array1 = '["a", "b", "c"]' %}
-Test array1:
-<pre>{{ array1 }}</pre>
-Test array loop:
-{% for val in array1 %}
-	{{ forloop.index0 }}: {{ val }} <br>
-{% endfor %}
-
-<br>
-{% assign array2 = '[{"a"}, {"b"}, {"c"}]' %}
-Test array2:
-<pre>{{ array2 }}</pre>
-Test array loop:
-{% for val in array2 %}
-	{{ forloop.index0 }}: {{ val }} <br>
-{% endfor %}
-
-<br>
-{% assign array3 = '"a", "b", "c"' %}
-Test array3:
-<pre>{{ array3 }}</pre>
-Test array loop:
-{% for val in array3 %}
-	{{ forloop.index0 }}: {{ val }} <br>
-{% endfor %}
-
-<br>
-{% assign array4 = '["a"], ["b"], ["c"]' %}
-Test array4:
-<pre>{{ array4 }}</pre>
-Test array loop:
-{% for val in array4 %}
-	{{ forloop.index0 }}: {{ val }} <br>
-{% endfor %}
-
-<br>
-{% assign array5 = '{ ["a"], ["b"], ["c"] }' %}
-Test array5:
-<pre>{{ array5 }}</pre>
-Test array loop:
-{% for val in array5 %}
-	{{ forloop.index0 }}: {{ val }} <br>
-{% endfor %}
-
-<br>
-{% assign array6 = "a,b,c,d,e" %}
-{% assign array6 = array6 | split "," %}
+{% assign array = "a,b,c,d,e" %}
+{% assign array = array | split: "," %}
 Test array6:
-<pre>{{ array6 }}</pre>
+<pre>{{ array }}</pre>
 Test array loop:
-{% for val in array6 %}
+{% for val in array %}
 	{{ forloop.index0 }}: {{ val }} <br>
 {% endfor %}
 
-
-<br>
-jsonArray, loop through val using for x in jsonArray:
-<br>
-{% for val in jsonArray %}
-	{{ val }} <br>
-{% endfor %}
-<br>
-
-keys before split, forloop.index0:
-<br>
-{% for key in keys %}
-	{{ forloop.index0 }} <br>
-{% endfor %}
-<br>
-
-<br>
-keys before split, loop through key using for keys and output the index numbers key.index:
-<br>
-{% for key in keys %}
-	{{ key.index0 }}
-{% endfor %}
-<br>
-
-<br>
-keys before split, loop through key using for keys and output the index numbers forloop.index:
-<br>
-{% for key in keys %}
-	{{ forloop.index }}
-{% endfor %}
-<br>
-
-
-{% assign keys = keys | split: "," | jsonify %}
-keys after split, jsonify: <pre>{{ keys }}</pre>
-<br>
-
-<br>
-after split, jsonify, forloop.index0:
-<br>
-{% for key in keys %}
-	{{ forloop.index0 }} <br>
-{% endfor %}
-<br>
 
 {% assign jsonArray = "" %}
 
