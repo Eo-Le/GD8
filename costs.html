@@ -14,13 +14,16 @@ First_cost, forloop.index0:
 <br>
 
 <br>
-new json Array - test 46:
+new json Array - test 47:
 
 <br>
 {% assign lstOfKey = "" %}
 {% for cost in first_cost %}
     {% assign lstOfKey = lstOfKey | append: "," | append: cost[0] %}
 {% endfor %}
+<br>
+{% assign lstOfKey = lstOfKey | slice: 1, lstOfKey.size %} <!-- removing the first comma -->
+{% assign lstOfKey = lstOfKey | split: "," %} <!-- converting to an array -->
 Test lstOfKey:<br>
 {{ lstOfKey }}<br>
 Test array loop:
@@ -29,21 +32,14 @@ Test array loop:
 {% endfor %}
 
 <br>
-{% assign lstOfKey = lstOfKey | slice: 1, lstOfKey.size %}
-Test lstOfKey:<br>
-{{ lstOfKey }}<br>
-Test array loop:
-{% for val in lstOfKey %}
-	{{ forloop.index0 }}: {{ val }} <br>
-{% endfor %}
-
-<br>
-{% assign lstOfKey = lstOfKey | split: "," %}
-Test lstOfKey:<br>
-{{ lstOfKey }}<br>
-Test array loop:
-{% for val in lstOfKey %}
-	{{ forloop.index0 }}: {{ val }} <br>
+{% for cost in site.data.costs %}
+	{% for val in lstOfKey %}
+		{% assign test = "cost." %}
+		{% assign test = test | append val %}
+		{{ forloop.index0 }}: {{ cost }} <br>
+		{{ forloop.index0 }}: {{ val }} <br>
+		{{ forloop.index0 }}: {{ test }} <br>
+	{% endfor %}
 {% endfor %}
 
 
