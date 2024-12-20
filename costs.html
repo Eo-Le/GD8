@@ -6,6 +6,12 @@ title: Udgifter
 {% assign first_cost = site.data.costs[0] %}
 First_cost: <pre>{{ first_cost }}</pre>
 <br>
+First_cost, forloop.index0:
+<br>
+{% for cost in first_cost %}
+	{{ forloop.index0 }} <br>
+{% endfor %}
+<br>
 
 {% assign keys = "" %}
 {% for key0Value1 in first_cost %}
@@ -66,7 +72,7 @@ after split, jsonify, forloop.index0:
   {% endif %}
 {% endfor %}
 
-new json Array - test 17:
+new json Array - test 18:
 <br>
 {{ jsonArray }}
 
