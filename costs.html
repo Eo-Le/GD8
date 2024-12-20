@@ -25,7 +25,7 @@ First_cost, forloop.index0:
 {% assign jsonArray = '[ ' | append: jsonArray | append: ' ]' %} <!-- encapsule the content in {jsonArray} -->
 
 <br>
-new json Array - test 31:
+new json Array - test 32:
 jsonArray: <pre>{{ jsonArray }}</pre>
 
 <br>
@@ -74,10 +74,20 @@ Test array loop:
 
 <br>
 {% assign array5 = '{ ["a"], ["b"], ["c"] }' %}
-Test array4:
+Test array5:
 <pre>{{ array5 }}</pre>
 Test array loop:
 {% for val in array5 %}
+	{{ forloop.index0 }}: {{ val }} <br>
+{% endfor %}
+
+<br>
+{% assign array6 = "a,b,c,d,e" %}
+{% assign array6 = array6 | split "," %}
+Test array6:
+<pre>{{ array6 }}</pre>
+Test array loop:
+{% for val in array6 %}
 	{{ forloop.index0 }}: {{ val }} <br>
 {% endfor %}
 
