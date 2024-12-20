@@ -1,86 +1,39 @@
 ---
 title: Udgifter
 ---
-
-<h1>TEST rendering of table content using Liquid</h1>
-{% assign first_cost = site.data.costs[0] %}
-First_cost: {{ first_cost }}
-<br>
-First_cost, forloop.index0:
-<br>
-{% for cost in first_cost %}
-	{{ forloop.index0 }}: {{ cost }} <br>
-{% endfor %}
-<br>
-
-<br>
-new json Array - test 54:
-
-<br>
-{% assign lstOfKey = "" %}
-{% for cost in first_cost %}
-    {% assign lstOfKey = lstOfKey | append: "," | append: cost[0] %}
-{% endfor %}
-<br>
-{% assign lstOfKey = lstOfKey | slice: 1, lstOfKey.size %} <!-- removing the first comma -->
-{% assign lstOfKey = lstOfKey | split: "," %} <!-- converting to an array -->
-Test lstOfKey:<br>
-{{ lstOfKey }}<br>
-Test array loop:<br>
-{% for val in lstOfKey %}
-	{{ forloop.index0 }}: {{ val }} <br>
-{% endfor %}
-
-<br>
+<--
+How to retrieve data using nested loop
 {% for cost in site.data.costs %} <!-- arrays of data in costs.json -->	
 	{% for currentCostArrayData in cost %} <!-- accessing the array of current index -->
 		{{ forloop.index0 }}: {{ currentCostArrayData[0] }} <!-- retrieving the name of all the keys for currentCostArrayData -->
 		{{ forloop.index0 }}: {{ currentCostArrayData[1] }} <!-- retrieving the values of all the key values for currentCostArrayData -->
 	{% endfor %}
 {% endfor %}
+-->
 
-
-
-
-
-
-
-	
-<div class="container mt-5">
-    <h2>Striped Table Example</h2>
-    <table class="table table-striped">
-        <thead>
+<div>Tabeloversigt over udgifterne.</div>	
+<div class="container-fluid overflow-auto mt-5" style="maxHeight: 200px">
+    <table class="table table-sm table-striped table-bordered">
+        <thead class="table-info">
             <tr>
 		{% for cost in site.data.costs limit: 1 %} <!-- only the first array in costs.json -->	
 			{% for currentCostArrayData in cost %} <!-- accessing the array of current index -->
 		    		<th>{{ currentCostArrayData[0] }}</th>  <!-- assigning the name of all the keys from currentCostArrayData to th element -->
 			{% endfor %}
-		{% endfor %}
-			
-		
+		{% endfor %}	
             </tr>
         </thead>
         <tbody>
 		{% for cost in site.data.costs %} <!-- all arrays in costs.json -->
-			
-				<tr>	
-					{% for currentCostArrayData in cost %} <!-- accessing the array of current index -->
+			<tr>	
+				{% for currentCostArrayData in cost %} <!-- accessing the array of current index -->
 					<td>{{ currentCostArrayData[1] }}</td>  <!-- assigning the value of all the key values from currentCostArrayData to td element -->
-					{% endfor %}
-				</tr>
-			
+				{% endfor %}
+			</tr>
 		{% endfor %}
         </tbody>
     </table>
 </div>
 
-<div id="calc-cost">Tabeloversigt over udgifterne.</div>
 
-<script src="{{ '/assets/js/calc-date.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/calc-cost.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 
-<script>
-	const fetchUrlCosts = "{{ '/costs/costs.html' | relative_url }}";
-	calcCost(fetchUrlCosts, 'calc-cost'); // Call the function
-</script>
