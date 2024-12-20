@@ -51,8 +51,8 @@ defaults:
       title: "null"
 
 
-plugins:
-  - jekyll-feed
+#plugins:
+#  - jekyll-feed
   
 
 # Exclude from processing.
