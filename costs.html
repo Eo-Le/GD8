@@ -1,7 +1,7 @@
 ---
 title: Udgifter
 ---
-<!--
+{% comment %}
 How to retrieve data using nested loop
 {% for cost in site.data.costs %} <!-- arrays of data in costs.json -->	
 	{% for currentCostArrayData in cost %} <!-- accessing the array of current index -->
@@ -9,10 +9,10 @@ How to retrieve data using nested loop
 		{{ forloop.index0 }}: {{ currentCostArrayData[1] }} <!-- retrieving the values of all the key values for currentCostArrayData -->
 	{% endfor %}
 {% endfor %}
--->
+{% endcomment %}
 
 <div>Tabeloversigt over udgifterne.</div>	
-<div class="container-fluid overflow-auto mt-5" style="max-height: 100px;">
+<div class="container-fluid overflow-auto mt-5" style="max-height: 800px;">
     <table class="table table-sm table-striped table-bordered">
         <thead class="table-info">
             <tr>
@@ -34,6 +34,3 @@ How to retrieve data using nested loop
         </tbody>
     </table>
 </div>
-
-
-
