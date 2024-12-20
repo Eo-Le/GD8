@@ -40,18 +40,19 @@ keys before split, loop through key using for keys and output the index numbers 
 keys after split, jsonify: <pre>{{ keys }}</pre>
 <br>
 
-{% assign jsonArray = "[" %}
+{% assign jsonArray = "" %}
 
 {% for key in keys %}
   {% assign jsonElement = '{"' | append: key | append: '"}' %}
-  {% if forloop.last %}
-    {% assign jsonArray = jsonArray | append: jsonElement %}
+  {% if forloop.first %}
+    {% assign jsonArray = jsonElement %}
   {% else %}
-    {% assign jsonArray = jsonArray | append: jsonElement | append: "," %}
+    {% assign jsonArray = jsonArray | append: "," | append: jsonElement %}
   {% endif %}
 {% endfor %}
 
-{% assign jsonArray = jsonArray | append: "]" %}
+{% assign jsonArray = "[" | append: jsonArray | append: "]" %}
+
 new json Array:
 <br>
 {{ jsonArray }}
