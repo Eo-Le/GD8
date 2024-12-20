@@ -15,7 +15,14 @@ First_cost: <pre>{{ first_cost }}</pre>
 keys before split, loop through keys using for key in keys:
 <br>
 {% for key in keys %}
-	{{ key }}
+	{{ key }} <br>
+{% endfor %}
+<br>
+
+keys before split, forloop.index0:
+<br>
+{% for key in keys %}
+	{{ forloop.index0 }} <br>
 {% endfor %}
 <br>
 
@@ -23,7 +30,7 @@ keys before split, loop through keys using for key in keys:
 keys before split, loop through key using for keys and output the index numbers key.index:
 <br>
 {% for key in keys %}
-	{{ key.index }}
+	{{ key.index0 }}
 {% endfor %}
 <br>
 
@@ -59,7 +66,7 @@ after split, jsonify, forloop.index0:
   {% endif %}
 {% endfor %}
 
-new json Array - test 16:
+new json Array - test 17:
 <br>
 {{ jsonArray }}
 
