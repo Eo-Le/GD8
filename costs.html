@@ -43,7 +43,7 @@ keys after split, jsonify: <pre>{{ keys }}</pre>
 {% assign jsonArray = "" %}
 
 {% for key in keys %}
-  <!-- {% assign jsonElement = '{"' | append: key | append: '"}' %} -->
+  {% assign jsonElement = '{"' | append: key | append: '"}' %}
   {% if forloop.first %}
     {% assign jsonArray = jsonElement %}
   {% else %}
