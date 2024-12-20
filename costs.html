@@ -9,24 +9,23 @@ First_cost: {{ first_cost }}
 First_cost, forloop.index0:
 <br>
 {% for cost in first_cost %}
-	{{ forloop.index0 }} <br>
+	{{ forloop.index0 }}: {{ cost }} <br>
 {% endfor %}
 <br>
 
 <br>
-new json Array - test 38:
+new json Array - test 39:
 
 <br>
 {% assign lstOfKey = "" %}
 {% for cost in first_cost %}
-  {% assign arrayElement = lstOfKey | append: cost[0] %} <!-- placehoder, unused -->
   {% if forloop.first %}
     {% assign lstOfKey = lstOfKey | append: cost[0] %} <!--  -->
   {% else %}
     {% assign lstOfKey = lstOfKey | append: "," | append: cost[0] %} <!--  -->
   {% endif %}
 {% endfor %}
-{% assign lstOfKey = '"' | append: lstOfKey | append: '"' %} <!-- -->
+<!-- {% assign lstOfKey = '"' | append: lstOfKey | append: '"' %} -->
 
 
 {% assign lstOfKey = lstOfKey | split: "," %}
