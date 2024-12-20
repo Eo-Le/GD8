@@ -13,31 +13,20 @@ First_cost, forloop.index0:
 {% endfor %}
 <br>
 
-{% assign jsonArray = "" %}
-{% for cost in first_cost %}
-  {% assign jsonElement = '"' | append: cost[0] | append: '"' %} <!-- each key is an 1D array -->
-  {% if forloop.first %}
-    {% assign jsonArray = jsonElement %} <!-- [ "cost[key]" ] -->
-  {% else %}
-    {% assign jsonArray = jsonArray | append: ", " | append: jsonElement %} <!-- [ "cost[key]" ], [ "cost[key]" ] -->
-  {% endif %}
-{% endfor %}
-{% assign jsonArray = '[ ' | append: jsonArray | append: ' ]' %} <!-- encapsule the content in {jsonArray} -->
-
 <br>
-new json Array - test 37:
+new json Array - test 38:
 
 <br>
 {% assign lstOfKey = "" %}
 {% for cost in first_cost %}
-  {% assign arrayElement = lstOfKey | append: cost[0] %} <!-- each key is an 1D array -->
+  {% assign arrayElement = lstOfKey | append: cost[0] %} <!-- placehoder, unused -->
   {% if forloop.first %}
-    {% assign lstOfKey = arrayElement %} <!-- [ "cost[key]" ] -->
+    {% assign lstOfKey = lstOfKey | append: cost[0] %} <!--  -->
   {% else %}
-    {% assign lstOfKey = lstOfKey | append: "," | append: arrayElement %} <!-- [ "cost[key]" ], [ "cost[key]" ] -->
+    {% assign lstOfKey = lstOfKey | append: "," | append: cost[0] %} <!--  -->
   {% endif %}
 {% endfor %}
-{% assign lstOfKey = '"' | append: lstOfKey | append: '"' %} <!-- encapsule the content in {jsonArray} -->
+{% assign lstOfKey = '"' | append: lstOfKey | append: '"' %} <!-- -->
 
 
 {% assign lstOfKey = lstOfKey | split: "," %}
