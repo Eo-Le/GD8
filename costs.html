@@ -23,8 +23,9 @@ First_cost, forloop.index0:
   {% endif %}
 {% endfor %}
 {% assign jsonArray = '{ ' | append: jsonArray | append: ' }' %} <!-- { "cost[key0]", "cost[key1]" } -->
+{% assign jsonArray = jsonArray |  jsonify %}
 <br>
-new json Array - test 25:
+new json Array - test 26:
 jsonArray: <pre>{{ jsonArray }}</pre>
 
 <br>
