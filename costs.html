@@ -20,10 +20,18 @@ keys before split, loop through keys using for key in keys:
 <br>
 
 <br>
-keys before split, loop through key using for keys and output the index numbers:
+keys before split, loop through key using for keys and output the index numbers key.index:
 <br>
 {% for key in keys %}
-	{{ key }}
+	{{ key.index }}
+{% endfor %}
+<br>
+
+<br>
+keys before split, loop through key using for keys and output the index numbers forloop.index:
+<br>
+{% for key in keys %}
+	{{ forloop.index }}
 {% endfor %}
 <br>
 
