@@ -12,12 +12,21 @@ First_cost: <pre>{{ first_cost }}</pre>
     {% assign keys = keys | append: key0Value1[0] | append: "," %}
 {% endfor %}
 <br>
-keys before split, loop through key using for key in keys: <pre>{{ keys }}</pre>
+keys before split, loop through keys using for key in keys:
 <br>
 {% for key in keys %}
 	{{ key }}
 {% endfor %}
 <br>
+
+<br>
+keys before split, loop through key using for keys and output the index numbers:
+<br>
+{% for key in keys %}
+	{{ key }}
+{% endfor %}
+<br>
+
 
 {% assign keys = keys | split: "," | jsonify %}
 keys after split, jsonify: <pre>{{ keys }}</pre>
