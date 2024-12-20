@@ -14,17 +14,17 @@ First_cost, forloop.index0:
 <br>
 
 {% assign jsonArray = "" %}
-{% for key in keys %}
-  {% assign jsonElement = '"' | append: key | append: '"' %} <!-- "key" -->
+{% for cost in first_cost %}
+  {% assign jsonElement = '"' | append: cost | append: '"' %} <!-- "cost" -->
   {% if forloop.first %}
-    {% assign jsonArray = jsonElement %} <!-- { "key" -->
+    {% assign jsonArray = jsonElement %} <!-- { "cost" -->
   {% else %}
-    {% assign jsonArray = jsonArray | append: ", " | append: jsonElement %} <!-- "key0", "key1" -->
+    {% assign jsonArray = jsonArray | append: ", " | append: jsonElement %} <!-- "cost0", "cost1" -->
   {% endif %}
 {% endfor %}
-{% assign jsonArray = '{ ' | append: jsonArray | append: ' }' %} <!-- { "key0", "key1" } -->
+{% assign jsonArray = '{ ' | append: jsonArray | append: ' }' %} <!-- { "cost0", "cost1" } -->
 <br>
-new json Array - test 20:
+new json Array - test 21:
 jsonArray: <pre>{{ jsonArray }}</pre>
 
 <br>
