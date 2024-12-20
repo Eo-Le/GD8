@@ -24,14 +24,22 @@ First_cost, forloop.index0:
 {% endfor %}
 {% assign jsonArray = '{ ' | append: jsonArray | append: ' }' %} <!-- { "cost[key0]", "cost[key1]" } -->
 <br>
-new json Array - test 23:
+new json Array - test 25:
 jsonArray: <pre>{{ jsonArray }}</pre>
 
 <br>
-keys before split, loop through keys using for key in keys:
+jsonArray, forloop.index0:
 <br>
-{% for key in keys %}
-	{{ key }} <br>
+{% for val in jsonArray %}
+	{{ forloop.index0 }} <br>
+{% endfor %}
+<br>
+
+<br>
+jsonArray, loop through val using for x in jsonArray:
+<br>
+{% for val in jsonArray %}
+	{{ val }} <br>
 {% endfor %}
 <br>
 
