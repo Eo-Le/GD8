@@ -14,17 +14,13 @@ First_cost, forloop.index0:
 <br>
 
 <br>
-new json Array - test 44:
+new json Array - test 45:
 
 <br>
-{% assign lstOfKey = "" | split: ","  %} <!-- declare an empty array starting with square brackets '[]' -->
+{% assign lstOfKey = "" %} <!-- declare an empty array starting with square brackets '[]' -->
 {% for cost in first_cost %}
-    {% assign lstOfKey = lstOfKey | append: , | append: cost[0] %} <!-- additional items. nb! the first comma ',' is not needed and has to be rmeoved -->
+    {% assign lstOfKey = lstOfKey | append: "," | append: cost[0] %} <!-- additional items. nb! the first comma ',' is not needed and has to be rmeoved -->
 {% endfor %}
-
-{% assign myArray = lstOfKey | slice: 3, lstOfKey.size %} <!-- remove prefix square brackets '[]' and the first comma ',': index 3-lengthOf_lstOfKey -->
-{% assign lstOfKey = lstOfKey | split: "," %} <!-- convert to an array and removing square brackets [] prefix in first item -->
-<!-- {% assign lstOfKey = lstOfKey | replace: "[", "" | replace: "]", "" | split: "," %}  convert to an array and removing square brackets [] prefix in first item -->
 
 Test lstOfKey:<br>
 {{ lstOfKey }}<br>
