@@ -24,7 +24,7 @@ How to retrieve data using nested loop
             </tr>
         </thead>
         <tbody>
-		{% for events in site.data.cevents.2024 %} <!-- all arrays in costs.json -->
+		{% for events in site.data.events.2024 %} <!-- all arrays in costs.json -->
 			<tr>	
 				{% for currentArrayData in events %} <!-- accessing the array of current index -->
 					<td>{{ currentArrayData[1] }}</td>  <!-- assigning the value of all the key values from currentArrayData to td element -->
