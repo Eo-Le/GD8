@@ -35,13 +35,12 @@ defaults:
       layout: "null"
       title: "null"
 
-  # if pages in folder _events then use layout: null.
+  # if pages in folder _events then use layout: event.
   - scope:
       path: ""
       type: "events"
     values:
-      layout: "null"
-      title: "null"
+      layout: "event"
   
   # If type is omitted then root directory is applied
   - scope:
