@@ -4,7 +4,7 @@ title: Udgifter
 
 <h1>TEST rendering of table content using Liquid</h1>
 {% assign first_cost = site.data.costs[0] %}
-First_cost: <pre>{{ first_cost }}</pre>
+First_cost: {{ first_cost }}
 <br>
 First_cost, forloop.index0:
 <br>
@@ -25,13 +25,13 @@ First_cost, forloop.index0:
 {% assign jsonArray = '[ ' | append: jsonArray | append: ' ]' %} <!-- encapsule the content in {jsonArray} -->
 
 <br>
-new json Array - test 34:
+new json Array - test 35:
 
 <br>
 {% assign array = "a,b,c,d,e" %}
 {% assign array = array | split: "," %}
 Test array:<br>
-<pre>{{ array }}</pre>
+{{ array }}<br>
 Test array loop:
 {% for val in array %}
 	{{ forloop.index0 }}: {{ val }} <br>
@@ -41,41 +41,30 @@ Test array loop:
 {% assign arrayX = "abekat,banan,citron,doodle,egern" %}
 {% assign arrayX = arrayX | split: "," %}
 Test arrayX:<br>
-<pre>{{ arrayX }}</pre>
+{{ arrayX }}<br>
 Test array loop:
 {% for val in arrayX %}
 	{{ forloop.index0 }}: {{ val }} <br>
 {% endfor %}
 
+<br>
+{% assign lstOfKey = "" %}
+{% for costKey in first_cost %}
+	{% assign lstOfKey = costKey[0] %} <br>
+{% endfor %}
 
-{% assign jsonArray = "" %}
-
-{% for key in keys %}
-  {% assign jsonElement = '{"' | append: key | append: '"}' %} <!-- {"key"} -->
-  {% if forloop.first %}
-    {% assign jsonArray = jsonElement %} <!-- {"key"} -->
-  {% else %}
-    {% assign jsonArray = jsonArray | append: "," | append: jsonElement %} <!-- {"key0", "key1"} -->
-  {% endif %}
+{% assign lstOfKey = lstOfKey | split: "," %}
+Test lstOfKey:<br>
+{{ lstOfKey }}<br>
+Test array loop:
+{% for val in lstOfKey %}
+	{{ forloop.index0 }}: {{ val }} <br>
 {% endfor %}
 
 
-new json Array:
-<br>
-{{ jsonArray }}
 
 
-<br>
 
-
-after split, jsonify, forloop.index0 nested in cost:
-<br>
-{% for cost in site.data.costs %}
-	{% for key in keys %}
-		{{ cost[forloop.index0].key }}
-	{% endfor %}
-{% endfor %}
-<br>
 
 
 	
