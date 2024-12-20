@@ -40,13 +40,21 @@ keys before split, loop through key using for keys and output the index numbers 
 keys after split, jsonify: <pre>{{ keys }}</pre>
 
 <br>
-after split, jsonify, cost[forloop.index].key: 
+after split, jsonify, forloop.index0:
+<br>
+{% for key in keys %}
+	{{ forloop.index0 }}
+{% endfor %}
+<br>
+
+after split, jsonify, forloop.index0 nested in cost:
 <br>
 {% for cost in site.data.costs %}
 	{% for key in keys %}
-		{{ cost[forloop.index].key }}
+		{{ cost[forloop.index0].key }}
 	{% endfor %}
 {% endfor %}
+<br>
 
 
 	
