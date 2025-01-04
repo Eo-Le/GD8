@@ -1,0 +1,4 @@
+---
+title: "Anh2"
+---
+{{ site.data.persons.gd8.all | where_exp: "person", "person.family == '02'" | sort: "dob" | reverse | jsonify }}

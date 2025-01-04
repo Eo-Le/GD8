@@ -1,26 +1,247 @@
 ---
 title: GD8 Fødselsdag
 ---
+<h1><u>Upcoming events</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForUpcomingEvents">
+	<p>Hvis du ser denne tekst, er Upcoming events ikke loadet korrekt!</p>
+</div>
 
-<h1>All Collections</h1>
-<ul>
-  {% for collection in site.collections %}
-    <li>
-      <h2>{{ collection.label }}</h2>
-      <p>Number of items: {{ collection.docs | size }}</p>
-      <ul>
-        {% for item in collection.docs %}
-          <li>
-            <a href="{{ item.url }}">{{ item.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </li>
-  {% endfor %}
-</ul>
+<h1><u>Alle familierne</u></h1>
+<div class="container-fluid d-flex align-items-center text-center overflow-x-auto overflow-y-hidden mb-5 border border-2 rounded custom-img-container">
+    {% assign sorted_people = site.data.persons.gd8.all | sort: "dob" %}
+    {% for person in sorted_people %}
+        {% if person.dob and person.dob.size == 10 %}
+            <div class="p-2 mx-2 border border-2 rounded">
+                <img class="rounded-circle" src="{{ person.img }}" alt="{{ person.name }}">
+                <p class="pt-2"><small>{{ person.name }}<br>{{ person.dob | date: '%d-%m-%Y' }}</small></p>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
 
-Test ruby <br>
-{% assign sortedPersons = site.data.persons.gd8.all | sort: "family" %}
-{% for person in sortedPersons %}
-{{ person.family }}: {{ person.name }}, {{ person.dob}} <br>
-{% endfor %}
+
+<h1><i class="bi bi-cake2"></i><u>Fødselaren</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForBirthdayPersons">
+	<p>Hvis du ser denne tekst, er fødselaren ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Fødselsdag inden for 30 dage</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForUpcomingBirthdays">
+	<p>Hvis du ser denne tekst, er upcoming birthdays ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Fødselsdag fornylig passeret</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForBirthdaysPassed">
+	<p>Hvis du ser denne tekst, er birthdays passed ikke loadet korrekt!</p>
+</div>
+
+{% comment %}
+<h1><u>Alle familierne - autorul</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForFamily">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+{% endcomment %}
+
+<h1><u>Født i Januar</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerBornInJan">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Født i Februar</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerBornInFeb">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Født i Marts</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerBornInMar">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Født i April</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerBornInApr">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Født i Maj</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerBornInMay">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Født i Juni</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerBornInJun">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Født i Juli</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerBornInJul">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Født i August</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerBornInAug">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Født i September</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerBornInSep">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Født i Oktober</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerBornInOct">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Født i November</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerBornInNov">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Født i December</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerBornInDec">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Mormor og Ong ngoai</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForGD8_01">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+{% comment %}
+<h1><u>Anh2s familie</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForGD8_02">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+{% endcomment %}
+
+<h1><u>Hongs familie</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForGD8_03">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Tus familie</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForGD8_04">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Jennys familie</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForGD8_05">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Decons familie</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForGD8_06">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Bennys familie</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForGD8_07">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Lois familie</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForGD8_08">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+<h1><u>Uts familie</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForGD8_09">
+	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
+</div>
+
+
+
+<script src="{{ '/assets/js/update-check.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/calc-upcoming-events.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/calc-birthday-persons.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/calc-upcoming-birthdays.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/calc-birthdays-passed.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/calc-ppl-by-month.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/calc-ppl-by-family.js' | relative_url }}"></script>
+
+
+<script>
+	const fetchUrlEvents = "{{ '/events/api/gd8/all.html' | relative_url }}";
+	calcUpcomingEvents(fetchUrlEvents, 'containerForUpcomingEvents');
+
+	const fetchUrlBDPersons = "{{ '/persons/api/gd8/all/all.html' | relative_url }}";
+	calcBirthdayPersons(fetchUrlBDPersons,'containerForBirthdayPersons');
+	calcUpcomingBirthdays(fetchUrlBDPersons,'containerForUpcomingBirthdays');
+	calcBirthdaysPassed(fetchUrlBDPersons,'containerForBirthdaysPassed');
+
+	const fetchUrlGD8_Jan = "{{ '/persons/api/gd8/born-in-month/01.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_Jan,'containerBornInJan');
+
+	const fetchUrlGD8_Feb = "{{ '/persons/api/gd8/born-in-month/02.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_Feb,'containerBornInFeb');
+
+	const fetchUrlGD8_Mar = "{{ '/persons/api/gd8/born-in-month/03.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_Mar,'containerBornInMar');
+
+	const fetchUrlGD8_Apr = "{{ '/persons/api/gd8/born-in-month/04.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_Apr,'containerBornInApr');
+
+	const fetchUrlGD8_May = "{{ '/persons/api/gd8/born-in-month/05.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_May,'containerBornInMay');
+
+	const fetchUrlGD8_Jun = "{{ '/persons/api/gd8/born-in-month/06.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_Jun,'containerBornInJun');
+
+	const fetchUrlGD8_Jul = "{{ '/persons/api/gd8/born-in-month/07.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_Jul,'containerBornInJul');
+
+	const fetchUrlGD8_Aug = "{{ '/persons/api/gd8/born-in-month/08.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_Aug,'containerBornInAug');
+
+	const fetchUrlGD8_Sep = "{{ '/persons/api/gd8/born-in-month/09.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_Sep,'containerBornInSep');
+
+	const fetchUrlGD8_Oct = "{{ '/persons/api/gd8/born-in-month/10.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_Oct,'containerBornInOct');
+
+	const fetchUrlGD8_Nov = "{{ '/persons/api/gd8/born-in-month/11.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_Nov,'containerBornInNov');
+
+	const fetchUrlGD8_Dec = "{{ '/persons/api/gd8/born-in-month/12.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_Dec,'containerBornInDec');
+
+
+
+	const fetchUrlGD8_01 = "{{ '/persons/api/gd8/family/01.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_01,'containerForGD8_01');
+
+	const fetchUrlGD8_02 = "{{ '/persons/api/gd8/family/02.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_02,'containerForGD8_02');
+
+	const fetchUrlGD8_03 = "{{ '/persons/api/gd8/family/03.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_03,'containerForGD8_03');
+
+	const fetchUrlGD8_04 = "{{ '/persons/api/gd8/family/04.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_04,'containerForGD8_04');
+
+	const fetchUrlGD8_05 = "{{ '/persons/api/gd8/family/05.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_05,'containerForGD8_05');
+
+	const fetchUrlGD8_06 = "{{ '/persons/api/gd8/family/06.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_06,'containerForGD8_06');
+
+	const fetchUrlGD8_07 = "{{ '/persons/api/gd8/family/07.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_07,'containerForGD8_07');
+
+	const fetchUrlGD8_08 = "{{ '/persons/api/gd8/family/08.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_08,'containerForGD8_08');
+
+	const fetchUrlGD8_09 = "{{ '/persons/api/gd8/family/09.html' | relative_url }}";
+	calcPeopleFilteredByMonth(fetchUrlGD8_09,'containerForGD8_09');
+
+	/*
+	const fetchUrlFamily = [
+            "{{ '/persons/api/gd8/family/09.html' | relative_url }}",
+            "{{ '/persons/api/gd8/family/08.html' | relative_url }}",
+            "{{ '/persons/api/gd8/family/07.html' | relative_url }}"
+        ];
+	calcPeopleInFamily(fetchUrlFamily,'containerForFamily')
+	*/
+
+
+</script>
