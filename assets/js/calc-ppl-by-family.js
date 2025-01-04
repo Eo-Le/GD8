@@ -1,4 +1,4 @@
-console.log("loaded: assets/js/calc-ppl-in-family.js");
+console.log("loaded: assets/js/calc-ppl-by-family.js");
 
 function calcPeopleInFamily(fetchUrls, containerID) {
     const fetchPromises = fetchUrls.map(url => 
