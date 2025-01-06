@@ -81,6 +81,7 @@ Her samles nyttige informationer om GiaDinh8
     git checkout -b gh-pages
     git add .
     git commit -m "push from fixPersonCollection branch to gh-pages new branch"
+    git push origin gh-pages
     ```
 
 
