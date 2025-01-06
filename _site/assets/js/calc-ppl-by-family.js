@@ -42,7 +42,7 @@ function calcPeopleInFamily(fetchUrls, containerID) {
 
             data.forEach(person => {
                 const personHTML = `
-                    <div class="mb-3">
+                    <div class="p-2 mx-2 border border-2 rounded">
                         <img src="${person.img}" alt="${person.name}" style="width: 100px; height: 100px; border-radius: 50%;" class="mb-2">
                         <p class="pt-2"><strong>Name:</strong> ${person.name}</p>
                         <p class="pt-2"><strong>Date of Birth:</strong> ${person.dob}</p>

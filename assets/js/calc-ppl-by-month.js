@@ -47,7 +47,7 @@ function calcPeopleFilteredByMonth(fetchUrl, containerID) {
             // Loop through the data and create each person's block
             processedData.forEach(person => {
                 const personBlock = document.createElement('div');
-                personBlock.className = 'p-3'; // Padding for each person's content
+                personBlock.className = 'p-2 mx-2 border border-2 rounded'; // Padding for each person's content
 
                 personBlock.innerHTML = `
                     <img class="rounded-circle" src="${person.img}" alt="${person.name}">

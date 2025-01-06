@@ -8,6 +8,7 @@
   /*background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZE8cyigQHUxrfI7uGxFdowyzttqs2Uoc6Zg&s');*/
   background-repeat: no;
   background-size: cover;
+  background-color: #333;
 }
 
 /* fix 100px works best on mobile devices */
