@@ -75,6 +75,14 @@ Her samles nyttige informationer om GiaDinh8
     * save
     * change back to deployed by Github Actions
 
+## When pushing to new branch
+  * e.g. for new branch `gh-pages`, push from branch `fixPersonCollection`
+    ```bash
+    git checkout -b gh-pages
+    git add .
+    git commit -m "push from fixPersonCollection branch to gh-pages new branch"
+    ```
+
 
 [^1]: [Jekyll Requirement](https://jekyllrb.com/docs/installation/#requirements)  
 [^2]: [Jekyll Quick Start](https://jekyllrb.com/docs/)  
