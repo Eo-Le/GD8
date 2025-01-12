@@ -63,6 +63,7 @@ fetch(fetchUrl) // Ensure the endpoint returns JSON
     processedData.forEach(person => {
         const personBlock = document.createElement('div');
         personBlock.className = 'p-2 mx-2 border border-2 rounded'; // Padding for each person's content
+        personBlock.style.backgroundColor = '#333';
 
         personBlock.innerHTML = `
             <img class="rounded-circle" src="${person.img}" alt="${person.name}">

@@ -63,11 +63,12 @@ fetch(fetchUrl) // Ensure the endpoint returns JSON
     processedData.forEach(person => {
         const personBlock = document.createElement('div');
         personBlock.className = 'p-2 mx-2 border border-2 rounded'; // Padding for each person's content
+        personBlock.style.backgroundColor = '#333';
 
         personBlock.innerHTML = `
             <img class="rounded-circle" src="${person.img}" alt="${person.name}">
             <p class="pt-2"><small>${person.name}, ${person.age} år</small></p>
-            <p class="pt-2"><small>Om ${person.daysToNextBirthday} dage</small></p>
+            <p class="pt-2"><small>${person.age + 1} år om ${person.daysToNextBirthday} dage</small></p>
         `;
 
         dFlexContainer.appendChild(personBlock); // Append each person block to the d-flex container

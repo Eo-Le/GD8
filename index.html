@@ -11,7 +11,7 @@ title: GD8 Fødselsdag
     {% assign sorted_people = site.data.persons.gd8.all | sort: "dob" %}
     {% for person in sorted_people %}
         {% if person.dob and person.dob.size == 10 %}
-            <div class="p-2 mx-2 border border-2 rounded">
+            <div class="p-2 mx-2 border border-2 rounded" style="background-color: #333">
                 <img class="rounded-circle" src="{{ person.img }}" alt="{{ person.name }}">
                 <p class="pt-2"><small>{{ person.name }}<br>{{ person.dob | date: '%d-%m-%Y' }}</small></p>
             </div>

@@ -38,7 +38,7 @@ function calcPeopleInFamily(fetchUrls, containerID) {
             const personsBlock = document.createElement('div');
             personsBlock.className = 'd-flex justify-content-center align-items-center text-center';
             personsBlock.style.height = '250px';
-            personsBlock.style.background = '#333';
+            personBlock.style.backgroundColor = '#333';
 
             data.forEach(person => {
                 const personHTML = `
