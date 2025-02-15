@@ -28,12 +28,12 @@ title: GD8 Fødselsdag
 	<p>Hvis du ser denne tekst, er birthdays passed ikke loadet korrekt!</p>
 </div>
 
-{% comment %}
-<h1><u>Alle familierne - autorul</u></h1>
-<div class="p-2 mb-5 border border-2 rounded" id="containerForFamily">
+
+<h1><u>Nyfødte babyer</u></h1>
+<div class="p-2 mb-5 border border-2 rounded" id="containerForNewborn">
 	<p>Hvis du ser denne tekst, er indholdet ikke loadet korrekt!</p>
 </div>
-{% endcomment %}
+
 
 <h1><u>Født i Januar</u></h1>
 <div class="p-2 mb-5 border border-2 rounded" id="containerBornInJan">
@@ -152,6 +152,7 @@ title: GD8 Fødselsdag
 <script src="{{ '/assets/js/calc-ppl-by-month.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/calc-ppl-by-family.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/calc-ppl-all.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/calc-newborn.js' | relative_url }}"></script>
 
 
 <script>
@@ -165,6 +166,7 @@ title: GD8 Fødselsdag
 
 
 	var gd8_all = {{ site.data.persons.gd8["all"] | jsonify }};
+	calcNewBorn(dataArray = gd8_all, containerID = 'containerForNewborn', sortBy = "nextBirthday", sortOrder = "asc");
     calcPeopleAll(dataArray = gd8_all, containerID = 'containerGD8All', filterBy = null, filterValue = null, sortBy = 'dob', sortOrder = 'asc');
 	calcPeopleAll(dataArray = gd8_all, containerID = 'containerBornInJan', filterBy = 'month', filterValue = '01', sortBy = 'nextBirthday', sortOrder = 'asc');
 	calcPeopleAll(dataArray = gd8_all, containerID = 'containerBornInFeb', filterBy = 'month', filterValue = '02', sortBy = 'nextBirthday', sortOrder = 'asc');
