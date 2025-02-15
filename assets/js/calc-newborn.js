@@ -24,7 +24,7 @@ function calcNewBorn(dataArray, containerID, sortBy = "nextBirthday", sortOrder 
             }
             
             dob.setHours(0, 0, 0, 0); // Normalize DOB to midnight
-            const ageInDays = Math.floor((today - dob) / (1000 * 60 * 60 * 24));
+            const ageInDays = Math.floor((today - dob) / (1000 * 60 * 60 * 24)) + 1; // Fix off-by-one error
             console.log(`Age in days for ${person.name}: ${ageInDays}`);
             
             return ageInDays <= 365; // Include if less than or equal to 365 days old
@@ -34,7 +34,7 @@ function calcNewBorn(dataArray, containerID, sortBy = "nextBirthday", sortOrder 
         const processedData = filteredData.map(person => {
             const dob = new Date(person.dob);
             const formattedDob = `${dob.getDate().toString().padStart(2, '0')}-${(dob.getMonth() + 1).toString().padStart(2, '0')}-${dob.getFullYear()}`;
-            const ageInDays = Math.floor((today - dob) / (1000 * 60 * 60 * 24));
+            const ageInDays = Math.floor((today - dob) / (1000 * 60 * 60 * 24)) + 1; // Fix off-by-one error
 
             // Calculate next birthday
             const nextBirthday = new Date(today.getFullYear(), dob.getMonth(), dob.getDate());
