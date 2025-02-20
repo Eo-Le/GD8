@@ -1,6 +1,6 @@
 console.log("loaded: assets/js/calc-birthdays-all.js");
 
-function calcBirthdaysAll(dataArray, containerID, filterDaysFrom = 0, sortOrder = 'asc') {
+function calcBirthdaysAll(dataArray, containerID, filterDaysFrom = 0, filterAgeBelow = null, sortOrder = 'asc') {
     try {
         console.log("inside function of calcBirthdaysAll");
         const today = new Date();
@@ -22,6 +22,9 @@ function calcBirthdaysAll(dataArray, containerID, filterDaysFrom = 0, sortOrder 
                     return null;
                 }
 
+                // Format DOB as dd-MM-yyyy
+                const formattedDob = `${dob.getDate().toString().padStart(2, '0')}-${(dob.getMonth() + 1).toString().padStart(2, '0')}-${dob.getFullYear()}`;
+
                 // Calculate next and last birthday
                 let lastBirthday = new Date(today.getFullYear(), dob.getMonth(), dob.getDate());
                 let nextBirthday = new Date(today.getFullYear(), dob.getMonth(), dob.getDate());
@@ -37,16 +40,25 @@ function calcBirthdaysAll(dataArray, containerID, filterDaysFrom = 0, sortOrder 
                 const daysSinceLastBirthday = Math.floor((today - lastBirthday) / (1000 * 60 * 60 * 24));
                 const daysUntilNextBirthday = Math.floor((nextBirthday - today) / (1000 * 60 * 60 * 24));
                 
+                // Calculate age in years and days
+                const age = today.getFullYear() - dob.getFullYear() - 
+                    (today < new Date(today.getFullYear(), dob.getMonth(), dob.getDate()) ? 1 : 0);
+                const ageInDays = Math.floor((today - dob) / (1000 * 60 * 60 * 24));
+                
+                // Apply age filter
+                if (filterAgeBelow !== null && age >= filterAgeBelow) {
+                    return null;
+                }
+
                 // Determine if the person meets the filtering criteria
                 if ((filterDaysFrom > 0 && daysUntilNextBirthday <= filterDaysFrom && daysUntilNextBirthday > 0) ||
                     (filterDaysFrom < 0 && daysSinceLastBirthday <= Math.abs(filterDaysFrom) && daysSinceLastBirthday > 0) ||
                     (filterDaysFrom === 0 && today.getDate() === dob.getDate() && today.getMonth() === dob.getMonth())) {
-                    const age = today.getFullYear() - dob.getFullYear() - 
-                        (today < new Date(today.getFullYear(), dob.getMonth(), dob.getDate()) ? 1 : 0);
-
                     return {
                         name: person.name,
                         age: age,
+                        ageInDays: ageInDays,
+                        formattedDob: formattedDob,
                         daysSinceLastBirthday: daysSinceLastBirthday,
                         daysUntilNextBirthday: daysUntilNextBirthday,
                         img: person.img
@@ -71,7 +83,7 @@ function calcBirthdaysAll(dataArray, containerID, filterDaysFrom = 0, sortOrder 
         // Create a d-flex container
         const dFlexContainer = document.createElement('div');
         dFlexContainer.className = 'container-fluid d-flex align-items-center text-center text-white overflow-x-auto overflow-y-hidden border border-2 custom-img-container';
-        dFlexContainer.style.height = '250px';
+        dFlexContainer.style.height = '300px';
 
         // Loop through the sorted data and create each person's block
         processedData.forEach(person => {
@@ -80,8 +92,13 @@ function calcBirthdaysAll(dataArray, containerID, filterDaysFrom = 0, sortOrder 
             personBlock.style.backgroundColor = '#333';
 
             let birthdayMessage = '';
+            let ageDisplay = `${person.age} år`;
+            if (filterAgeBelow !== null && person.age < filterAgeBelow) {
+                ageDisplay = `${person.ageInDays} dage`;
+            }
+
             if (filterDaysFrom > 0) {
-                birthdayMessage = person.age+1 + ' år om ' + person.daysUntilNextBirthday + ' dage';
+                birthdayMessage = person.age + 1 + ' år om ' + person.daysUntilNextBirthday + ' dage';
             } else if (filterDaysFrom < 0) {
                 birthdayMessage = person.daysSinceLastBirthday + ' dage siden';
             } else {
@@ -90,7 +107,7 @@ function calcBirthdaysAll(dataArray, containerID, filterDaysFrom = 0, sortOrder 
 
             personBlock.innerHTML = `
                 <img class="rounded-circle" src="${person.img}" alt="${person.name}">
-                <p class="pt-2"><small>${person.name}, ${person.age} år</small></p>
+                <p class="pt-2"><small>${person.name}, ${ageDisplay}<br>${person.formattedDob}</small></p>
                 <p class="pt-2"><small>${birthdayMessage}</small></p>
             `;
 
