@@ -1,13 +1,16 @@
 ---
-title: Sitemap
+title: Debug
+permalink: /debug/
 ---
 
 <h1><u>All Pages</u></h1>
 <p>Number of pages: {{ site.pages | size }}</p>
+{% assign sitePages = site.pages %}
+{% assign sitePagesSorted = sitePages | sort: 'title' %}
 <ul>
-  {% for page in site.pages %}
+  {% for page in sitePagesSorted %}
     <li>
-      <a href="{{ page.url }}">{{ page.title | default: page.url }}</a>
+      <a href="{{ site.baseurl }}{{ page.url }}">{{ page.title | default: page.url }}</a>
     </li>
   {% endfor %}
 </ul>
@@ -46,7 +49,7 @@ title: Sitemap
                         {% if file_folder == folder %}
                             <ul>
                                 <li>
-                                    {{forloop.index}}: <a href="{{ file.url }}">{{ file.title | default: file.name }}</a>
+                                    {{forloop.index}}: <a href="{{ site.baseurl }}{{ file.url }}">{{ file.title | default: file.name }}</a>
                                 </li>
                             </ul>
                         {% endif %}    
@@ -78,7 +81,7 @@ title: Sitemap
   <h2>Files with Extension: {{ group.name }}</h2>
   <ul>
     {% for file in group.items %}
-      <li>{{ file.path }}</li>
+      <li><a href="{{ site.baseurl }}{{ file.path }}">{{ file.path }}</a></li>
     {% endfor %}
   </ul>
 {% endfor %}
@@ -97,8 +100,9 @@ title: Sitemap
 
 <h1><u>All Keys</u></h1>
 <p>Number of keys: {{ keys | size }}</p>
+{% assign keysSorted = keys | sort  %}
 <ul>
-  {% for key in keys %}
+  {% for key in keysSorted %}
     <li>
       {{ forloop.index }}: {{key}}
     </li>
@@ -108,14 +112,14 @@ title: Sitemap
 
 
 <h1><u>All keys in site</u></h1>
-{% assign siteKeys = site | keys %}</p>
+{% assign siteKeys = site | keys %}
+{% assign siteKeysSorted = siteKeys | sort %}
 <ul>
-  {% for key in siteKeys %}
+  {% for key in siteKeysSorted %}
     <li>
-      {{ forloop.index }}: {{key}}
+      {{ forloop.index }}: {{ key[0] }}
     </li>
   {% endfor %}
 </ul>
 <div class="mb-5"></div>
-
 

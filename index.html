@@ -153,19 +153,17 @@ title: GD8 Fødselsdag
 <script src="{{ '/assets/js/calc-ppl-by-family.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/calc-ppl-all.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/calc-newborn.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/calc-birthdays-all.js' | relative_url }}"></script>
 
 
 <script>
 	const fetchUrlEvents = "{{ '/events/api/gd8/all.html' | relative_url }}";
 	calcUpcomingEvents(fetchUrlEvents, 'containerForUpcomingEvents');
 
-	const fetchUrlBDPersons = "{{ '/persons/api/gd8/all/all.html' | relative_url }}";
-	calcBirthdayPersons(fetchUrlBDPersons,'containerForBirthdayPersons');
-	calcUpcomingBirthdays(fetchUrlBDPersons,'containerForUpcomingBirthdays');
-	calcBirthdaysPassed(fetchUrlBDPersons,'containerForBirthdaysPassed');
-
-
 	var gd8_all = {{ site.data.persons.gd8["all"] | jsonify }};
+	calcBirthdaysAll(dataArray = gd8_all, containerID = 'containerForBirthdayPersons',0);
+	calcBirthdaysAll(dataArray = gd8_all, containerID = 'containerForUpcomingBirthdays',30,'desc');
+	calcBirthdaysAll(dataArray = gd8_all, containerID = 'containerForBirthdaysPassed',-30,'desc');
 	calcNewBorn(dataArray = gd8_all, containerID = 'containerForNewborn', sortBy = "nextBirthday", sortOrder = "asc");
     calcPeopleAll(dataArray = gd8_all, containerID = 'containerGD8All', filterBy = null, filterValue = null, sortBy = 'dob', sortOrder = 'asc');
 	calcPeopleAll(dataArray = gd8_all, containerID = 'containerBornInJan', filterBy = 'month', filterValue = '01', sortBy = 'nextBirthday', sortOrder = 'asc');

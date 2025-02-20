@@ -14,7 +14,6 @@ title: GD9Esb Fødselsdag
 </div>
 
 
-{%comment%}
 <h1><i class="bi bi-cake2"></i><u>Fødselaren</u></h1>
 <div class="p-2 mb-5 border border-2 rounded" id="containerForBirthdayPersons">
 	<p>Hvis du ser denne tekst, er fødselaren ikke loadet korrekt!</p>
@@ -29,7 +28,7 @@ title: GD9Esb Fødselsdag
 <div class="p-2 mb-5 border border-2 rounded" id="containerForBirthdaysPassed">
 	<p>Hvis du ser denne tekst, er birthdays passed ikke loadet korrekt!</p>
 </div>
-{%endcomment%}
+
 
 <h1><u>Nyfødte babyer</u></h1>
 <div class="p-2 mb-5 border border-2 rounded" id="containerForNewborn">
@@ -139,19 +138,18 @@ title: GD9Esb Fødselsdag
 <script src="{{ '/assets/js/calc-ppl-by-family.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/calc-ppl-all.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/calc-newborn.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/calc-birthdays-all.js' | relative_url }}"></script>
 
 
 <script>
 	/*const fetchUrlEvents = "{{ '/events/api/gd8/all.html' | relative_url }}";
 	calcUpcomingEvents(fetchUrlEvents, 'containerForUpcomingEvents');
-
-	const fetchUrlBDPersons = "{{ '/persons/api/gd8/all/all.html' | relative_url }}";
-	calcBirthdayPersons(fetchUrlBDPersons,'containerForBirthdayPersons');
-	calcUpcomingBirthdays(fetchUrlBDPersons,'containerForUpcomingBirthdays');
-	calcBirthdaysPassed(fetchUrlBDPersons,'containerForBirthdaysPassed');*/
-
+	*/
 
 	var gd9_all = {{ site.data.persons.gd9esb["all"] | jsonify }};
+	calcBirthdaysAll(dataArray = gd9_all, containerID = 'containerForBirthdayPersons',0);
+	calcBirthdaysAll(dataArray = gd9_all, containerID = 'containerForUpcomingBirthdays',30,'desc');
+	calcBirthdaysAll(dataArray = gd9_all, containerID = 'containerForBirthdaysPassed',-30,'desc');
 	calcNewBorn(dataArray = gd9_all, containerID = 'containerForNewborn', sortBy = "nextBirthday", sortOrder = "asc");
     calcPeopleAll(dataArray = gd9_all, containerID = 'containerGD9All', filterBy = null, filterValue = null, sortBy = 'dob', sortOrder = 'asc');
 	calcPeopleAll(dataArray = gd9_all, containerID = 'containerBornInJan', filterBy = 'month', filterValue = '01', sortBy = 'nextBirthday', sortOrder = 'asc');
