@@ -1,0 +1,10 @@
+name = "geo-pages-proxy"
+main = "index.js"
+account_id = "8ff88fa3d2ff7dc058fd148212198ab9"
+compatibility_date = "2023-09-04"
+workers_dev = false
+
+[[routes]]
+#pattern = "iprestriction.gd8.dk/*" #hvis der ønskes anden subdomain for at få vist indholdet, dvs. iprestriction.gd8.dk
+pattern = "gd8.dk/*" #custom i gh pages skal fjernes ellers opstår der konflikt. gd8.dk?debug for at få vist landekoden
+zone_name = "gd8.dk"
