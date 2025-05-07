@@ -1,3 +1,9 @@
 _site/
 # _persons/api/gd8/all/
 # _events/api/
+
+# Cloudflare wrangler
+.wrangler/
+node_modules/
+dist/
+.idea/
