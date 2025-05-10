@@ -1,3 +1,15 @@
+/*
+Only allow request from Dk and No.
+Fetch content from the public https://eo-le.github.io/GD8 gh page
+and serve it thrugh cloud flare.
+
+wrangler commands
+wrangler deploy : For at udgive wrangler metoden
+wrangler login: For at logge på cf
+wrangler secret: For at oprette secret
+wrangler whoami: For at se hvem som er logget på
+*/
+
 export default {
   async fetch(request) {
     const country = request.cf?.country || "XX";
@@ -18,10 +30,36 @@ export default {
       });
     }
 
-    // Proxy til GitHub Pages
-    const githubOrigin = `https://eo-le.github.io/GD8${url.pathname}${url.search}`;
-    const response = await fetch(githubOrigin);
 
-    return new Response(response.body, response);
+	
+	// Strip leading /GD8 if present
+	let path = url.pathname;
+	if (path.startsWith("/GD8")) {
+	  path = path.replace("/GD8", "");
+	}
+
+	// Proxy til GitHub Pages
+	const githubOrigin = `https://eo-le.github.io/GD8${path}${url.search}`;
+
+    
+	//const response = await fetch(githubOrigin); //response returnerer ikke assets korrekt og dermed ingen css
+	
+	const response = await fetch(githubOrigin, {
+	  method: request.method,
+	  headers: request.headers,
+	  body: request.body,
+	  redirect: "follow"
+	});
+	
+// return new Response(response.body, response); // risiko for at overføre hele response objektet inkl. uønskede headers.
+	
+	const modifiedHeaders = new Headers(response.headers);
+	modifiedHeaders.set("X-Proxy-By", "Cloudflare Worker");
+
+	return new Response(response.body, {
+	  status: response.status,
+	  statusText: response.statusText,
+	  headers: modifiedHeaders
+	});
   }
 }
