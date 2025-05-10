@@ -1,4 +1,4 @@
-# Repush: Re-add custom domain gd8.dk on gh page. Try to fix page not found.
+# Repush: After fixing cf wrangler, but still cache old version. Repush to get new version in stead of introducing no-cache to header.
 lang: da-DK
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
